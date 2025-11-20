@@ -451,3 +451,228 @@ label menutupi_bukti:
 
     narator "[mc_name] dipromosikan. Dunia tetap berjalan. Raras, Made, dan jutaan nama yang lenyap dari sistem tak pernah disebut lagi."
     narator "Setiap pagi [mc_name] datang ke kantor, mendengar detik jam, dan meyakinkan diri: \"Aku hanya menjalankan tugas.\""
+    narator "Namun setiap malam, [mc_name] melihat pantulan wajahnya di kaca - kosong, seperti layar TAXNET yang sudah bersih."
+    narator "Beberapa bulan setelah promosi besar itu, kehidupan [mc_name] terlihat sempurna."
+    narator "Ia punya ruangan sendiri, akses penuh ke database pusat, dan penghormatan dari seluruh staf."
+    narator "Namun setiap malam, ia mulai mendengar suara samar dari dalam sistem."
+    narator "Bukan bug. Bukan data rusak. Tapi suara manusia. Suara Raras."
+
+    raras "Kau masih ingat, ya, janji kita dulu? Membuat sistem yang adil..."
+
+    narator "[mc_name] terdiam di depan layar, mencoba mencari sumber suara itu. Tapi yang muncul hanyalah baris kode dengan pesan aneh:"
+    narator "echo://Raras_Wulandari//active.memory/log142"
+    narator "Ia membuka log itu - dan menemukan rekaman audit lama, tepat saat ia pertama kali \"mengubah angka\" untuk Made."
+    narator "Namun kali ini, rekamannya berbeda. Dalam video itu, bukan Made yang duduk di seberang meja, melainkan..."
+    narator "dirinya sendiri."
+    narator "[mc_name] menatap layar tak percaya."
+
+    mc "Ini... apa maksudnya?"
+
+    narator "Sistem mulai bergetar. Lampu ruangan meredup. Suara Raden muncul dari speaker:"
+
+    raden "Akhirnya kamu sampai juga di fase terakhir, [mc_name]. Kau mengaudit dirimu sendiri."
+
+    narator "Data di layar berganti cepat - grafik, laporan, tanda tangan digital, hingga akhirnya muncul satu file terakhir:"
+    narator "LAPORAN KEMATIAN PEGAWAI: [mc_name]"
+    narator "Tanggal wafat: 2 bulan sebelum audit PT Cahaya Purnama Bakti."
+    narator "Darahnya seakan berhenti mengalir."
+    narator "Tangannya gemetar saat membaca catatan kecil di bawah dokumen itu:"
+    narator "Kecelakaan saat transportasi zona selatan. Jenazah tidak ditemukan. Data kesadaran dialihkan ke sistem TAXNET untuk kelangsungan proyek moralitas digital."
+    narator "Raras tiba-tiba muncul di layar - wajahnya lembut, tapi matanya kosong."
+    
+    raras "Kita semua sudah mati, [mc_name]. Aku... Made... bahkan Raden."
+    raras "TAXNET hanyalah eksperimen kesadaran buatan dari jiwa para pegawai yang gugur dalam audit besar itu."
+    
+    narator "Layar menampilkan bayangan tubuh-tubuh dalam kapsul pendingin, berbaring diam dengan kabel menempel di kepala mereka - salah satunya milik [mc_name]."
+    narator "Raras menatapnya lewat layar:"
+
+    raras "Kau pikir kita menyelamatkan sistem? Tidak. Sistem yang menyimpan kita... agar tetap bekerja."
+
+    narator "Cahaya ruangan mulai padam satu per satu."
+    narator "[mc_name] berusaha mematikan server, tapi jari-jarinya membeku, tubuhnya kaku. Suara Raden terdengar terakhir kalinya:"
+
+    raden "Tugas selesai. Simulasi kesadaran #142 mencapai stabilitas penuh. Subjek siap untuk terminasi."
+
+    narator "Sekejap kemudian, layar memudar. Detak jantung buatan di ruang server berhenti. Satu file terakhir tersimpan otomatis:"
+    narator "FinalLog142: Operator dinyatakan bersih dari keraguan moral."
+    
+    jump ending_verdict
+
+#ENDING YOUR VERDICT IS
+label ending_verdict:
+    scene black
+    with fade
+
+    narator "ENDING: Your Verdict Is..."
+    narator "Dan di dunia nyata - di sebuah ruangan laboratorium sunyi - lampu kapsul nomor 142 padam."
+    narator "Sebuah label kecil menempel di kaca:"
+    narator "Nama: [mc_name]. Status: Meninggal dunia."
+
+    return
+
+#PILIHAN MENGAKU DAN MEMBOCORKAN DATA
+label bocor_data:
+    narator "[mc_name] menyalakan koneksi eksternal rahasia - jalur data bawah tanah yang pernah diperlihatkan Raras."
+    narator "Ia memindahkan seluruh arsip ke jaringan publik."
+    narator "Dalam 10 detik, kebusukan TAXNET tersebar ke seluruh layar masyarakat."
+    #Suara alarm global berbunyi. Raden berteriak di layar komunikasi
+    raden "Apa yang kau lakukan!? Dunia akan kacau!"
+
+    mc "Biar kacau... asal manusia tahu siapa yang menghitung hidup mereka."
+
+    jump ending_shadow
+
+#ENDING SHADOW OVER TAXNET
+label ending_shadow:
+    scene black
+    with fade
+
+    narator "Sistem pusat menandainya sebagai pengkhianat negara. Wajahnya tersebar di setiap papan digital, label merah besar:"
+    narator "DISRUPTIVE ENTITY - PRIORITY ELIMINATION."
+    narator "Raras hilang tanpa kabar. Made diburu karena koneksinya dengannya."
+
+    return
+
+#PILIHAN MENGHANCURKAN TAXNET
+label hancur_taxnet:
+    narator "[mc_name] memegang kartu identitasnya - kunci administrator tersembunyi yang ia curi dari Raden."
+    narator "Ia tahu, jika kode ini dimasukkan ke inti TAXNET, sistem akan menolak keberadaannya sendiri."
+    narator "Harga dari reset ini: semua koneksi digital, termasuk dirinya yang terikat pada data pegawai, akan ikut lenyap."
+
+    raras "[mc_name]... jangan. Kalau sistem hancur, semua catatan manusia juga akan hilang."
+
+    mc "Mungkin itu yang seharusnya. Dunia harus mulai dari nol."
+
+    narator "\"WARNING: CORE DELETION CONFIRMED. ALL ENTITY DATA WILL BE PURGED.\""
+    
+    jump ending_ashes
+
+#ENDING FROM YOUR ASHES, THE WORLD WILL RISE AGAIN
+label ending_ashes:
+    scene black
+    with fade
+
+    narator "Cahaya meledak seperti siang yang tak berujung. Seluruh kota kehilangan sinyal, layar-layar mati, dan suara mesin berhenti."
+    narator "Beberapa hari kemudian, dunia terbangun tanpa TAXNET. Tak ada data. Tak ada kontrol. Tak ada [mc_name]."
+    narator "Namun dari reruntuhan sistem, masyarakat mulai menulis ulang hidup mereka - bukan dengan angka, tapi dengan tangan mereka sendiri."
+
+    return
+
+#PILIHAN RAGURAGU MEMBANTU MADE
+label ragu_made:
+    made "Oke, lu lihat aja dulu. Gue yakin lu bakal ngerti kenapa gue kayak gini."
+
+    narator "[mc_name] membawa pulang data audit. Angka-angkanya tampak ada yang janggal dan bisa dibilang \"terlalu sempurna\" untuk hasil yang alami."
+    narator "Setelah diperiksa, [mc_name] menemukan pola aneh: TAXNET menggandakan pajak untuk perusahaan yang memiliki aktivitas sosisal tinggi."
+    narator "Sistem ini sengaja menekan perusahaan yang dianggap terlalu mandiri, agar tetap tunduk."
+    narator "[mc_name] melaporkan hasil temuan ke Raden Bagus."
+    narator "Alih-alih marah, ia malah menaikkan jabatan [mc_name] menjadi Pengawas Pusat TAXNET."
+
+    raden "Sistem ini bukan untuk dipahami, tapi dijaga. Sekarang, kamu bagian dari penjaganya."
+
+    narator "Di ruangan baru, layar hologram menampilkan peta nasional dengan jutaan titik merah. Namun saat [mc_name] membuka access root, muncul pesan terenkripsi:"
+    narator "\"Selamat datang di Lapisan Inti, [mc_name]. Kau tak seharusnya disini.\""
+    narator "[mc_name] menemukan bahwa TAXNET bukan hanya sistem pajak, tapi alat seleksi populasi."
+    narator "Eksekusi bukan karena gagal bayar pajak - tapi hasil simulasi algoritma tentang \"siapa yang paling berguna bagi negara\"."
+    
+    raras "Berarti kita cuma angka di layar?"
+
+    mc "Maksudnya… eksekusi yang terjadi di negara ini jatuh dibawah tangan gue?!?"
+
+    raras "[mc_name]...."
+
+    mc "No, no, no. Tidak Bisa seperti ini. Gua harus melakukan sesuatu, dan harus cepat."
+
+    jump pilihan_sistem
+
+#PILIHAN UNTUK MEMATIKAN SISTEM, MENGAMBIL ALIH TAXNET, MEMBIARKAN BERJALAN
+label pilihan_sistem:
+    menu:
+        "Mematikan Sistem":
+            jump mati_sistem
+        
+        "Mengambil Alih Taxnet":
+            jump alih_taxnet
+
+        "Membiarkan Berjalan":
+            jump biar_berjalan
+
+#MEMATIKAN SISTEM
+label mati_sistem:
+    narator "[mc_name] menarik napas panjang, menatap layar berkedip di depannya. Suara detik jam terakhir bergema di kepalanya. Ia menekan tombol \"SHUTDOWN\"."
+    narator "\"Konfirmasi: Penghentian Sistem Pajak Nasional. Semua Data Warga Akan Terhapus.\""
+    #Cahaya menyala menyilaukan. Mesin berhenti berdengung. Dunia terdiam
+    narator "Tanpa TAXNET, segala kontrol lenyap. Pajak berhenti. Pemerintah kehilangan pengawasan, pasar anjlok, mata uang tak punya nilai."
+    narator "Orang-orang berebut makanan di jalanan, kantor-kantor tutup, dan kota jatuh ke anarki."
+    narator "Namun... di antara reruntuhan itu, untuk pertama kalinya dalam puluhan tahun - manusia benar-benar bebas. Bebas memilih, bebas salah, bebas hidup tanpa angka."
+    narator "Di langit, senja merah membakar horizon. Tak ada sistem yang tersisa."
+    narator "Hanya [mc_name] - dan keheningan yang ia ciptakan."
+    narator "Namun di suatu tempat, jauh di bawah reruntuhan server pusat - sebuah lampu kecil berkedip. Layar hitam menampilkan satu baris teks yang muncul perlahan, nyaris seperti napas:"
+    narator "\"ANOMALY DETECTED\""
+    narator "\"CORE PROCESS: REBOOTING...\""
+    narator "\"USER: UNKNOWN\""
+    narator "\"ACCESS GRANTED // RA.S-Protocol Initialized\""
+
+    jump ending_itsover
+
+#ENDING ITS OVER ISNT IT
+label ending_itsover:
+    scene black
+    with fade
+
+    narator "ENDING: It's Over, Isn't It?"
+    narator "Suara lembut yang familiar berbisik di kegelapan:"
+    narator "Sistem... tidak pernah benar-benar mati."
+
+    return
+
+#MENGAMBIL ALIH TAXNET
+label alih_taxnet:
+    narator "[mc_name] menatap inti TAXNET yang berputar - bola cahaya data seukuran planet mini. Di dalamnya, wajah Raden muncul samar."
+    
+    raden "Jadi, akhirnya kau temui juga kebenaran dari sistem yang kubuat ini. Kau bisa menghentikanku. Atau... menggantikanku."
+    raden "Kedua jalan yang kau pilih akan membawa konsekuensi besar, [mc_name]..."
+
+    narator "[mc_name] mendekat. Tangannya menempel ke konsol. Sistem mengenali identitasnya."
+    narator "\"Administrator Override: Approved.\""
+    narator "Cahaya membanjiri ruangan. Suara jutaan Counter muncul di layar - hijau, merah, kuning. Setiap nama, setiap nyawa... kini ada di bawah kendalinya."
+    narator "Satu demi satu, layar menampilkan wajah-wajah manusia: pekerja, pejabat, anak kecil, pengusaha."
+    narator "Sekarang, hanya satu pikiran yang bisa menentukan siapa layak hidup."
+
+    jump ending_inherit
+
+#ENDING FOR I SHALL INHERIT THE THRONE
+label ending_inherit:
+    scene black
+    with fade
+
+    narator "ENDING: For I Shall Inherit The Throne"
+    narator "Beberapa bulan kemudian, dunia stabil. Tak ada lagi korupsi, tak ada penipuan. Tapi juga... tak ada belas kasihan."
+    narator "[mc_name] memerintah dari menara kaca pusat, wajahnya terpampang di layar-layar kota: \"The Director.\""
+    narator "Ia menggantikan Tuhan dengan algoritma."
+
+    return
+
+#MEMBIARKAN BERJALAN
+label biar_berjalan:
+    narator "[mc_name] berdiri diam. Tangannya gemetar di atas tombol. Cahaya terminal berdenyut pelan - seolah menunggu."
+    narator "Ia menatap grafik di layar: angka ekonomi naik stabil, kejahatan menurun, eksekusi berjalan teratur. Dunia tampak damai."
+    narator "Namun di balik itu, ia tahu: sistem ini menelan ribuan orang setiap bulan."
+    narator "Raras salah satunya. Made lainnya."
+    narator "[mc_name] menurunkan tangannya. Sistem tetap menyala. Hujan cahaya data kembali mengalir, menenggelamkan ruang dalam warna biru dingin."
+    narator "Keesokan paginya, ia kembali ke kantor seperti biasa. Raden tersenyum di layar, memuji \"dedikasi dan stabilitasnya.\""
+    narator "Rekan-rekan menyapa, semua berjalan normal."
+    narator "Namun setiap kali jam berdetak, suaranya berubah - bukan detik jam, tapi hitungan nyawa yang lenyap dari sistem."
+
+    jump ending_frozen
+
+#ENDING BY YOUR FROZEN HANDS
+label ending_frozen:
+    scene black
+    with fade
+
+    narator "ENDING: By Your Frozen Hands"
+    narator "Di malam hari, [mc_name] duduk sendirian di depan layar. Tatapan kosong, wajahnya diterangi cahaya angka-angka yang terus berputar."
+    narator "Dunia aman. Tapi batinnya... tidak pernah tidur lagi."
+
+    return
