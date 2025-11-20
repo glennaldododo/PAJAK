@@ -82,7 +82,7 @@ label prolog_2:
 
     jump pilihan_mc
 
-#3 PILIHAN MC
+#MEMILIH 3 PILIHAN MC
 label pilihan_mc:
     menu:
         "Bantu Made dengan senang hati": #Relasi dengan Made menurun, Moralitas membaik
@@ -143,7 +143,7 @@ label tolak_made:
 
     jump pilihan_selamatkan_raras
 
-#PILIHAN MENYELEMATKAN RARAS ATAU TIDAK
+#MEMILIH MENYELEMATKAN RARAS ATAU TIDAK
 label pilihan_selamatkan_raras:
     menu:
         "Menyelamatkan Raras": #Relasi dengan Raras membaik, moral membaik
@@ -194,7 +194,7 @@ label selamatkan_raras:
 
     jump pilihan_alasan_ke_raden
 
-#2 PILIHAN ALASAN KE RADEN (JUJUR ATAU TIDAK)
+#MEMILIH ALASAN KE RADEN (JUJUR ATAU TIDAK)
 label pilihan_alasan_ke_raden:
     menu:
         "Jujur pada Raden": #Relasi dengan Raden membaik, moral membaik
@@ -316,7 +316,7 @@ label alasan_tidak_jujur:
 
     jump epilog
 
-#EPILOG
+#EPILOG SECRET ENDING VENI VIDI VICI
 label epilog:
     scene black
     with dissolve
@@ -338,4 +338,116 @@ label epilog:
 
 #PILIHAN TIDAK SELAMATKAN RARAS
 label tidak_selamatkan_raras:
-    #Layar menampilkan hitungan mundur 02:15:47
+    #Layar menampilkan hitungan mundur 02:15:47, Raras menelpon berkali-kali, tak dijawab.
+    narator "[mc_name] duduk diam. Ia memilih menutup semua jendela sistem, membiarkan mekanisme berjalan seperti biasa."
+    narator "Esoknya, sebuah pesan sistem muncul:"
+    narator "🔔 Eksekusi Digital: Raras Wulandari - Completed."
+    narator "Kursi di sebelah meja kerjanya kosong. Tak ada lagi tawa ceria setiap pagi."
+    narator "Raden Bagus menghampirinya."
+
+    raden "Bagus. Kamu tidak membiarkan perasaan menguasai logika. Negara butuh pegawai seperti kamu."
+
+    narator "[mc_name] hanya mengangguk."
+    narator "Namun setiap kali menatap layar, bayangan wajah Raras muncul di antara barisan angka."
+    narator "Ia mempertahankan kemurnian profesinya, tapi kehilangan sesuatu yang jauh lebih manusiawi."
+    narator "Integritasnya tetap, tapi hatinya membeku."
+    narator "Suasana kantor terasa lebih hening dari biasanya."
+    narator "Suara mesin pemindai data terdengar monoton.[mc_name] duduk di mejanya, menatap layar yang menampilkan laporan-laporan bersih tanpa cela."
+    narator "Namun, di dalam kolom catatan sistem, ada satu entri yang tak bisa ia hapus:"
+    narator "📢 WULANDARI_RARAS.LOG - \"Final Transmission Incomplete.\""
+    narator "Setiap kali sistem memproses data baru, notifikasi itu muncul lagi. Seolah sistem mengingatkan bahwa ada sesuatu yang hilang — atau seseorang."
+    narator "Raden Bagus masuk ke ruangan."
+
+    raden "[mc_name], hasil audit wilayah timur meningkat drastis. Pusat sangat puas. Mereka mempertimbangkanmu untuk promosi."
+
+    narator "[mc_name] menoleh perlahan."
+
+    mc "Promosi?"
+
+    narator "Raden tersenyum kecil."
+
+    raden "Ya. Kepala Unit Verifikasi Regional. Jabatan yang layak untuk seseorang yang paham bahwa moralitas manusia tidak boleh mengganggu efisiensi negara."
+
+    narator "[mc_name] terdiam. Suara pendingin server berdengung seperti napas panjang yang berat."
+    narator "Ia tahu ia sedang naik pangkat - tapi mengapa terasa seperti tenggelam?"
+    #Latar kantor baru dua bulan kemudian
+    narator "Kantornya kini jauh lebih besar, tapi lebih sepi."
+    narator "Di dinding, terdapat layar besar bertuliskan: 🔔 \"Integrity Is Efficiency.\""
+    narator "Di mejanya, sistem TAXNET versi baru sedang diuji."
+    narator "Satu fitur baru muncul - fitur yang dulu mematikan Raras:"
+    narator "🔔AUTO-FILTER HUMAN ERROR v2.1"
+    narator "Tapi kali ini, di sudut layar, ada catatan kecil otomatis: \"Didedikasikan untuk R.W.\""
+    narator "[mc_name] terpaku. Tak ada orang yang menulis catatan itu."
+    narator "Mungkin bug. Mungkin pesan. Atau mungkin, sistem juga punya kenangan."
+    #Layar redup, kamera mendekat ke wajah mc
+    narator "Ia tidak melakukan kesalahan. Ia tidak berkhianat pada jabatannya. Tapi di dalam hatinya, sesuatu telah mati bersama nama Raras Wulandari."
+    narator "Suara narator muncul pelan, seperti gema dalam data:"
+    
+    jump ending_stillness
+
+#ENDING STILLNESS BRINGS CRUELTY
+label ending_stillness:
+    scene black
+    with fade
+
+    narator "ENDING: Stillness Brings Cruelty"
+    narator "Terkadang, menjaga sistem berarti kehilangan sisi manusia dan dalam dunia yang diawasi angka, yang beku bukan hanya data - tapi hati mereka yang memilih diam."
+
+    return
+
+#PILIHAN BANTU MADE
+label bantu_made:
+    made "Nah, gitu dong. Gue tahu lu orang baik, [mc_name]."
+    made "Dunia sekarang butuh yang bisa \"menyesuaikan diri\"."
+
+    narator "[mc_name] tahu ini salah, tapi kata-katanya menenangkan. [mc_name] mulai menyesuaikan angka laporan. Satu perubahan kecil. Tidak akan ada yang tahu, pikirnya."
+    narator "Audit selesai. PT Cahaya Purnama Bakti dinyatakan \"aman\""
+    narator "Beberapa hari kemudian, [mc_name] menerima pesan dari Made - \"Makasih, bro. Lu bakal naik cepat.\""
+    narator "Dan benar saja, Raden Bagus memanggil [mc_name] masuk ke ruangannya."
+
+    raden "Kamu efisien. Data rapi, cepat, tanpa noise. Sistem butuh orang seperti kamu."
+
+    narator "[mc_name] dipromosikan menjadi Supervisor TAXNET Sektor Selatan"
+    narator "Tapi sejak itu, [mc_name] mulai sering menerima \"permintaan\" aneh. Perusahaan besar meminta audit disamarkan. Warga kecil tiba-tiba jatuh ke status merah."
+
+    raras "Ada kabar kalau ada warga yang dieksekusi, [mc_name]. Tapi hal ini nggak masuk akal.. Lu ada kabar gak?"
+    
+    mc "Mungkin sistem aja yang salah… atau mungkin memang sudah sepantasnya terjadi begitu."
+
+    narator "Suatu hari, [mc_name] menerima laporan eksekusi massal - 1.200 warga Zona Selatan terhapus dari sistem."
+    narator "Penyebabnya? Koreksi data audit Made Arya Wiradipa."
+    narator "Ternyata, perbaikan kecil [mc_name] dulu membuat hutang Made dialihkan ke ribuan nama orang miskin."
+    narator "Raras menemukan bukti dan menghadapkannya kepada [mc_name]."
+
+    raras "Semua ini gara gara kamu ya…?! Kamu yang ubah datanya!"
+
+    mc "Gue cuma bantu temen… gue nggak tahu efeknya sebesar ini…"
+
+    jump pilihan_bukti_raras
+
+#MEMILIH BUKTI (MENUTUPI, MEMBOCORKAN, MENGHANCURKAN)
+label pilihan_bukti_raras:
+    menu:
+        "Menutupi Bukti": #Relasi dengan Raras menurun, Moral menurun
+            $ moral -= 2
+            $ relasi_raras -= 2
+            jump menutupi_bukti
+        
+        "Mengaku dan Membocorkan Data": #Relasi dengan Raras membaik, Moral membaik
+            $ moral += 1
+            $ relasi_raras += 1
+            jump bocor_data
+
+        "Menghancurkan TAXNET": 
+            jump hancur_taxnet
+
+#PILIHAN MENUTUPI BUKTI
+label menutupi_bukti:
+    narator "[mc_name] menatap layar terminal. Data kejahatan sistem sudah terbuka lebar. Cukup satu sentuhan untuk menghapus semuanya - seolah tak pernah terjadi"
+    narator "Tangannya bergetar, tapi ia menekan tombol \"HAPUS LOG\"."
+    narator "Layar redup. Cahaya ruangan kembali biru tenang."
+    
+    raden "Keputusan yang cerdas. Kadang yang tahu kebenaran, tak perlu berbicara."
+
+    narator "[mc_name] dipromosikan. Dunia tetap berjalan. Raras, Made, dan jutaan nama yang lenyap dari sistem tak pernah disebut lagi."
+    narator "Setiap pagi [mc_name] datang ke kantor, mendengar detik jam, dan meyakinkan diri: \"Aku hanya menjalankan tugas.\""
