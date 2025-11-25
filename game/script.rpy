@@ -1,4 +1,9 @@
 ﻿#character
+image lead netral = ConditionSwitch(
+    "gender == 'm'", "Prolog/Prolog/Adegan 0/1. MC (m) netral.png",
+    "gender == 'f'", "Prolog/Prolog/Adegan 0/1. MC (f) netral.png",
+)
+
 #prolog
 #adegan 0
 image f netral = "Prolog/Prolog/Adegan 0/1. MC (f) netral.png"
@@ -218,6 +223,7 @@ default relasi_made = 0
 default relasi_raras = 0
 default relasi_raden = 0
 default mc_debt = 0
+default gender = ""
 
 define narator = Character(None)     # untuk narasi tanpa nama
 define mc = Character("[mc_name]")    # untuk dialog MC
@@ -225,11 +231,24 @@ define raras = Character("Raras Wulandari")
 define made = Character("Made Arya Wiradipa")
 define raden = Character("Raden Bagus")
 
+
+image f diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (f) diam.png"
+
 #START VISUAL NOVEL
 label start:
     $ mc_name = renpy.input("Masukkan nama karaktermu:") #input nama pemain
     $ mc_name = mc_name.strip()
-    if mc_name == "":
+    menu :
+        "Pilih gender"
+        "Laki-laki" :  
+            $ gender = "m"
+            show lead netral
+            "kamu adalah laki-laki"
+        "Perempuan" :
+            $ gender = "f"
+            show lead netral
+            "kamu adalah perempuan"
+                if mc_name == "":
         jump start
     jump prolog_0
 
