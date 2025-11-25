@@ -1,4 +1,14 @@
-﻿#INISIALISASI
+﻿#character
+image raras netral = "raras/Raras Wulandari.png"
+image made netral = "made/Made Arya.png"
+image raden netral = "raden/Raden Bagus.png"
+image bg prolog 0 = "bg/Salinan ADEGAN 0.png"
+image bg prolog 1 = "bg/Salinan ADEGAN 1.png"
+image bg prolog 2 = "bg/Salinan ADEGAN 2.png"
+
+
+
+#INISIALISASI
 default mc_name = ""
 default moral = 0
 default relasi_made = 0
