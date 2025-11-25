@@ -1,11 +1,71 @@
 ﻿#character
-image raras netral = "raras/Raras Wulandari.png"
-image made netral = "made/Made Arya.png"
-image raden netral = "raden/Raden Bagus.png"
+
+#BG
+#prolog
 image bg prolog_0 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 0.png"
 image bg prolog_1 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 1.png"
 image bg prolog_2 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 2.png"
 
+#pilihan dialog 1
+image cafe raras = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/Cafe bertemu dengan Raras.png"
+image ruang kerja mc = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/Ruang kerja Pemeran utama.png"
+image ruang raden = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/Ruang kerja Raden.png"
+image ruang rapat bersama = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/Ruang rapat bersama Made.png"
+
+#A nyelamatin raras
+image ruang mc pagi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/Ruang kerja pemeran utama (pagi).png"
+image ruang rapat = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/Ruang rapat.png"
+#pilihan 1 jujur
+image diusir raden = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/PILIHAN 1 (JUJUR)/Setelah di usir oleh Raden.png"
+#pilihan 2 menentang
+image meja kerja raras = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/PILIHAN  2 (MEMBANTAH DAN MENENTANG RADEN)/Epilog (meja kerja Raras).png"
+image ruang rapat alarm = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/PILIHAN  2 (MEMBANTAH DAN MENENTANG RADEN)/Ruang rapat (alarm berbunyi).png"
+image ruang rapat kembali pulih = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/A (MENYELAMATKAN RARAS)/PILIHAN  2 (MEMBANTAH DAN MENENTANG RADEN)/Ruang Rapat (suasana kembali pulih).png"
+
+#B tidak nyelamatin
+image ruang kerja baru = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/B (TIDAK MENYELAMATKAN RARAS)/Ruang kerja baru pemain utama.png"
+image ruang kerja lama = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 1/B (TIDAK MENYELAMATKAN RARAS)/Ruang kerja lama pemain utama.png"
+
+
+#pilihan dialog 2
+#cafe, ruang kerja ada di sblmnya
+
+#A menutup bukti
+image ruang kerja mc suram = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/A (MENUTUPI BUKTI)/Ruang kerja pemeran utama (suram)_.png"
+image ruang kerja baru mc suram = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/A (MENUTUPI BUKTI)/Ruang kerja pemeran utama naik jabatan (suram).png"
+image tampilan pencoretan = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/A (MENUTUPI BUKTI)/Tampilan layar saat pencoretan.png"
+
+#B ngaku, bocorin
+image alarm bunyi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/B (MENGAKU DAN MEMBOCORKAN DATA)/Alarm berbunyi.png"
+image kondisi hancur = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/B (MENGAKU DAN MEMBOCORKAN DATA)/Kondisi global setelah hancur.png"
+#ruang kerja mc suram ada di atas
+
+#C hancurin
+image kondisi dunia reset = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/C (MENGHANCURKAN TAXNET)/Kondisi dunia yang damai setelah reset.png"
+image kondisi internet padam = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 2/C (MENGHANCURKAN TAXNET)/Kondisi kota setelah akses internet padam.png"
+
+#pilihan dialog 3
+image ruang kerja malam = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/Ruang kerja pemeran utama saat mengecek data (malam hari).png"
+image ruang rapat made = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/Ruang rapat bersama Made.png"
+image ruang baru = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/ruangan baru.png"
+
+#A
+image dunia damai = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)/Dunia damai walaupun chaos.png"
+image komputer runtuh = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)"
+image kota chaos = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)/Kondisi kota yang chaos.png"
+
+
+#B
+image bola cahaya 1 = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/B. (MENGAMBIL ALIH TAXNET)/Bola cahaya 1.png"
+image bola cahaya 2 = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/B. (MENGAMBIL ALIH TAXNET)/Bola cahaya 2.png"
+image suasana ganti kekuasaan = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/B. (MENGAMBIL ALIH TAXNET)/Suasana kota setelah ganti kekuasaan.png"
+
+
+#C
+image jam berdetik = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Jam berdetik.png"
+image laptop sunyi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Laptop di kesunyian malam.png"
+image suasana malam = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Suasan saat malam hari.png"
+image suasana pagi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Suasana saat pagi hari.png"
 
 
 #INISIALISASI
@@ -24,17 +84,6 @@ define raden = Character("Raden Bagus")
 
 #START VISUAL NOVEL
 label start:
-    label start:
-    menu:
-        "Pilih gender karaktermu:"
-
-        "Laki-laki":
-            $ mc_gender = "male"
-            jump input_name
-
-        "Perempuan":
-            $ mc_gender = "female"
-            jump input_name
     $ mc_name = renpy.input("Masukkan nama karaktermu:") #input nama pemain
     $ mc_name = mc_name.strip()
     if mc_name == "":
