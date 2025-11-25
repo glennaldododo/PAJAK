@@ -24,6 +24,17 @@ define raden = Character("Raden Bagus")
 
 #START VISUAL NOVEL
 label start:
+    label start:
+    menu:
+        "Pilih gender karaktermu:"
+
+        "Laki-laki":
+            $ mc_gender = "male"
+            jump input_name
+
+        "Perempuan":
+            $ mc_gender = "female"
+            jump input_name
     $ mc_name = renpy.input("Masukkan nama karaktermu:") #input nama pemain
     $ mc_name = mc_name.strip()
     if mc_name == "":
