@@ -238,19 +238,20 @@ image f diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan be
 label start:
     $ mc_name = renpy.input("Masukkan nama karaktermu:") #input nama pemain
     $ mc_name = mc_name.strip()
+    if mc_name == "":
+        jump start
     menu :
         "Pilih gender"
         "Laki-laki" :  
             $ gender = "m"
             show lead netral
             "kamu adalah laki-laki"
+            jump prolog_0
         "Perempuan" :
             $ gender = "f"
             show lead netral
             "kamu adalah perempuan"
-    if mc_name == "":
-        jump start
-    jump prolog_0
+            jump prolog_0
 
 #ADEGAN 0 PROLOG - RUANG KERJA {NAMA PEMAIN}
 label prolog_0:
