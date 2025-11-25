@@ -248,7 +248,7 @@ label start:
             $ gender = "f"
             show lead netral
             "kamu adalah perempuan"
-                if mc_name == "":
+    if mc_name == "":
         jump start
     jump prolog_0
 
