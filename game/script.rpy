@@ -2,9 +2,9 @@
 image raras netral = "raras/Raras Wulandari.png"
 image made netral = "made/Made Arya.png"
 image raden netral = "raden/Raden Bagus.png"
-image bg prolog_0 = "bg/Salinan ADEGAN 0.png"
-image bg prolog_1 = "bg/Salinan ADEGAN 1.png"
-image bg prolog_2 = "bg/Salinan ADEGAN 2.png"
+image bg prolog_0 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 0.png"
+image bg prolog_1 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 1.png"
+image bg prolog_2 = "BG/Gambar Background/ADEGAN 0/PROLOG/Salinan ADEGAN 2.png"
 
 
 
