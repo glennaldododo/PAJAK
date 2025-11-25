@@ -32,6 +32,7 @@ label start:
 
 #ADEGAN 0 PROLOG - RUANG KERJA {NAMA PEMAIN}
 label prolog_0:
+    scene bg prolog 0
     narator "Suara detik jam bergema di ruang kerja yang sepi. Di layar komputer, angka dan grafik berjajar seperti tentara menunggu perintah."
     narator "Duduklah seorang pegawai muda Pajak yang baru bekerja 3 bulan yang kerap disapa dengan [mc_name]."
     narator "Dirinya terlahir dari keluarga ningrat yang idealis dan berintegritas untuk membangun negeri."
@@ -55,6 +56,7 @@ label prolog_0:
 
 #ADEGAN 1 PROLOG - KANTOR PAJAK, PAGI HARI
 label prolog_1:
+    scene bg prolog 1
     # (Suara keyboard dan notifikasi sistem) --> sound
     raras "Pagi, wah kelihatannya kamu seneng banget, dapet tugas audit pertama nih, iya gak [mc_name]?"
     
@@ -68,6 +70,7 @@ label prolog_1:
 
 #ADEGAN 2 PROLOG - RUANG RAPAT
 label prolog_2:
+    scene bg prolog 2
     narator "Tiba di ruang rapat dengan peralatan serba digital. [mc_name] melangkah masuk dengan map di tangan, mengenakan tanda pengenal resmi pegawai pajak."
 
     narator "Di ruang rapat, Made Arya Wiradipa menunggunya dengan senyum lebar."
