@@ -1,4 +1,147 @@
 ﻿#character
+#prolog
+#adegan 0
+image f netral = "Prolog/Prolog/Adegan 0/1. MC (f) netral.png"
+image m netral = "Prolog/Prolog/Adegan 0/1. MC (m) netral.png"
+image f liat made = "Prolog/Prolog/Adegan 0/2. MC (f) setelah liat pemiliknya made.png"
+image m liat made = "Prolog/Prolog/Adegan 0/2. MC (m) setelah liat pemiliknya made.png"
+
+#adegan 1
+image raras wah = "Prolog/Prolog/Adegan 1/1. Raras, saat _wahh.._.png"
+image f ehh = "Prolog/Prolog/Adegan 1/2. MC (f) saat _Ehh iya_.png"
+image m ehh = "Prolog/Prolog/Adegan 1/2. MC (m) saat _Ehh iya_.png"
+
+#adegan 2
+image made nyambut mc = "Prolog/Prolog/Adegan 2/1. Made, menyambut MC.png"
+image f ngobrol made = "Prolog/Prolog/Adegan 2/2. MC (f) saat ngobrol sama made.png"
+image m ngobrol made = "Prolog/Prolog/Adegan 2/2. MC (m) saat ngobrol sama made.png"
+
+
+#dialog 1 (tolak bantu)
+#scene 1
+image made kecewa = "Dialog/Dialog 1 (tolak membantu)/Scene 1/1. Made kecewa.png"
+image m diem = "Dialog/Dialog 1 (tolak membantu)/Scene 1/2. MC (m)_.png"
+image f diem = "Dialog/Dialog 1 (tolak membantu)/Scene 1/2. MC (f) .png"
+image raden bangga = "Dialog/Dialog 1 (tolak membantu)/Scene 1/3. Raden bangga.png"
+
+#scene 2 latar berubah
+image f taxnet ="Dialog/Dialog 1 (tolak membantu)/Scene 2 (latar berubah)/1. MC (f) melihat taxnet.png"
+image m taxnet ="Dialog/Dialog 1 (tolak membantu)/Scene 2 (latar berubah)/1. MC (m) melihat TAXNET.png"
+image raras shock ="Dialog/Dialog 1 (tolak membantu)/Scene 2 (latar berubah)/2. Raras shock.png"
+
+#scene 3 nyelamatin raras
+#scene 3.1 
+image raras lega = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/scene 3.1/1. Raras lega.png"
+image f senang = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/scene 3.12. MC (f) Senang.png"
+image m senang = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/scene 3.1/2. MC (m) Senang .png"
+
+#scene 3.2 dipanggil raden
+image raden memanggil = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/1. Raden memanggil MC.png"
+image f menghadap raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/2. MC (f) menghadap raden.png"
+image m menghadap raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/2. MC (m) menghadap raden.png"
+#jujur
+image m jujur = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/jujur/1. MC (m) jujur.png"
+image f jujur = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/jujur/1. MC (f) jujur.png"
+image raras akhir = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/jujur/2. Raras, pesan akhir.png"
+image m dipindah = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/jujur/3. MC (m) dipindahkan.png"
+image f dipindah = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/jujur/3. MC (f) dipindahkan.png"
+
+#bantah
+#berdebat
+image f debat raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+image m debat raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+image raden berdebat = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+image f lampu merah = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+image m lampu merah = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+image raden lampu merah = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/1. berdebat/"
+
+#latar malam  
+image f liat liat nama raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/1. MC (f) melihat nama raden.png"
+image m liat liat nama raden = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/1. MC (m) Melihat nama raden .png"
+image raden jangan bodoh = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/2. Raden _Jangan bodoh_.png"
+image f ketauan = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/3. MC (f) ketahuan.png"
+image m ketauan = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/3. MC (m) ketahuan.png"
+image raden senyum tipis = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/4. Raden senyum tipis.png"
+image raden mergokin mc = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/5. Raden memergoki MC.png"
+image raden keluarin pistol = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/6. Raden mengeluarkan pistol.png"
+image f berhasil upload = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/7. MC (f) berhasil mengupload.png"
+image m berhasil upload = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/2. latar malam/7. MC (m) berhasil mengupload.png"
+
+#epilog 
+image raras baca berita = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatkan Raras)/Scene 3.2 (dipanggil Raden Bagus)/bantah/3. Epilog/Raras membaca berita.png"
+
+
+#scene 3 tidak nyelamatin
+#image raden bangga ada di sblmnya
+image f senyum bahagia = "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (f).png"
+image m senyum bahagia = "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (m).png"
+image f kantor baru = "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png"
+image m kantor baru = "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png"
+
+
+
+#dialog 2
+#scene 1
+image made puas = "/Dialog/Dialog 2 (setuju membantu)/Scene 1/1. Made puas.png"
+image f senyum = "/Dialog/Dialog 2 (setuju membantu)/Scene 1/2. MC (f).png"
+image m senyum = "/Dialog/Dialog 2 (setuju membantu)/Scene 1/2. MC (m).png"
+
+#scene 2
+image raras tanya = "Dialog/Dialog 2 (setuju membantu)/scene 2/1. Raras bertanya-tanya.png"
+image f ngobrol sama raras = "Dialog/Dialog 2 (setuju membantu)/scene 2/2. MC (f) ngobrol sama raras .png"
+image m ngobrol sama raras = "Dialog/Dialog 2 (setuju membantu)/scene 2/2. MC (m) ngobrol sama raras.png"
+
+#scene 3 ngaku dan bocorin data
+image f senyum kesal = "Dialog/Dialog 2 (setuju membantu)/scene 3 (mengaku dan membocorkan data)/MC (f).png"
+image m senyum kesal = "Dialog/Dialog 2 (setuju membantu)/scene 3 (mengaku dan membocorkan data)/MC (m).png"
+image raden kesal = "Dialog/Dialog 2 (setuju membantu)/scene 3 (mengaku dan membocorkan data)/Raden.png"
+
+#scene 3 nutupi bukti
+#raden bangga ada di sblmnya
+image raras masih ingat = "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/2. Raras _kamu masih ingat.._.png"
+image f bingung = "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/MC (f).png"
+image m bingung = "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/MC (m).png"
+
+
+
+#dialog 3
+#scene 1
+image made sedikit lega = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/Made sedikit lega.png"
+image f agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (f) .png"
+image m agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (m).png"
+
+#scene 2 lapor ke raden
+#raden bangga ada di sblmnya
+#f senyum ada di sblmnya
+#m senyum ada di sblmnya
+
+#scene 3 ruangan baru
+image f kaget = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (f) _selamat datang.._.png"
+image m kaget = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (m) _selamat datang_.png"
+image raras bingung = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/2. Raras.png"
+image f maksudnya = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (f) _Maksudnya.png"
+image m maksudnya = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (m) _Maksudnya.._.png"
+
+#scene 4 mematikan sistem
+image f sinis = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (f) .png"
+image m sinis = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (m).png"
+
+#scene 4 membiarkan berjalan
+image f diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (f) diam.png"
+image m diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (m) diam.png"
+image raden memuji = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/2. Raden memuji.png"
+image f tatapan kosong = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (f) tatapan kosong.png"
+image m tatapan kosong = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (m) tatapan kosong.png"
+#f senyum bahagia ada di sebelumnya
+#m senyum bahagia ada di sebelumnya
+
+#scene 4 mengambil alih taxnet
+image raden agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/1.Raden.png"
+image f gantiin Tuhan = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (f) menggantikan tuhan.png"
+image m gantiin Tuhan = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (m) menggantikan tuhan.png"
+#f menghadap raden ada di sblmnya
+#m menghadap raden ada di sblmnya
+
 
 #BG
 #prolog
