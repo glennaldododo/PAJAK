@@ -146,8 +146,10 @@ image lead bingung = ConditionSwitch(
 #dialog 3
 #scene 1
 image made sedikit lega = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/Made sedikit lega.png"
-image f agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (f) .png"
-image m agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (m).png"
+image lead made sedikit lega = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (m).png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (f) .png",
+)
 
 #scene 2 lapor ke raden
 #raden bangga ada di sblmnya
@@ -155,29 +157,42 @@ image m agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (m).p
 #m senyum ada di sblmnya
 
 #scene 3 ruangan baru
-image f kaget = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (f) _selamat datang.._.png"
-image m kaget = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (m) _selamat datang_.png"
+image lead kaget = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (m) _selamat datang_.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (f) _selamat datang.._.png",
+)
 image raras bingung = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/2. Raras.png"
-image f maksudnya = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (f) _Maksudnya.png"
-image m maksudnya = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (m) _Maksudnya.._.png"
+image lead maksudnya = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (m) _Maksudnya.._.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (f) _Maksudnya.png",
+)
 
 #scene 4 mematikan sistem
-image f sinis = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (f) .png"
-image m sinis = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (m).png"
+image lead sinis = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (m).png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mematikan sistem)/MC (f) .png",
+)
+
 
 #scene 4 membiarkan berjalan
-image f diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (f) diam.png"
-image m diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (m) diam.png"
+image lead diam = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (m) diam.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (f) diam.png",
+)
 image raden memuji = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/2. Raden memuji.png"
-image f tatapan kosong = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (f) tatapan kosong.png"
-image m tatapan kosong = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (m) tatapan kosong.png"
+image lead tatapan kosong = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (m) tatapan kosong.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/4. MC (f) tatapan kosong.png",
+)
 #f senyum bahagia ada di sebelumnya
 #m senyum bahagia ada di sebelumnya
 
 #scene 4 mengambil alih taxnet
 image raden agak kesal = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/1.Raden.png"
-image f gantiin Tuhan = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (f) menggantikan tuhan.png"
-image m gantiin Tuhan = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (m) menggantikan tuhan.png"
+image lead gantiin Tuhan = ConditionSwitch(
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (m) menggantikan tuhan.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (mengambil alih taxnet)/3. MC (f) menggantikan tuhan.png",
+)
 #f menghadap raden ada di sblmnya
 #m menghadap raden ada di sblmnya
 
