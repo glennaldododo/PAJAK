@@ -146,7 +146,7 @@ image lead bingung = ConditionSwitch(
 #dialog 3
 #scene 1
 image made sedikit lega = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/Made sedikit lega.png"
-image lead made sedikit lega = ConditionSwitch(
+image lead madenya sedikit lega = ConditionSwitch(
     "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (m).png",
     "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 1/MC (f) .png",
 )
@@ -268,20 +268,13 @@ image suasana pagi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIAR
 #INISIALISASI
 default mc_name = ""
 default moral = 0
-default relasi_made = 0
-default relasi_raras = 0
-default relasi_raden = 0
-default mc_debt = 0
 default gender = ""
 
 define narator = Character(None)     # untuk narasi tanpa nama
-define mc = Character("[mc_name]")    # untuk dialog MC
-define raras = Character("Raras Wulandari")
-define made = Character("Made Arya Wiradipa")
-define raden = Character("Raden Bagus")
-
-
-image f diam = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 4 (membiarkan berjalan)/1. MC (f) diam.png"
+define mc = Character("[mc_name]", image="lead")    # untuk dialog MC
+define raras = Character("Raras Wulandari", image="raras")
+define made = Character("Made Arya Wiradipa", image="made")
+define raden = Character("Raden Bagus", image="raden")
 
 #START VISUAL NOVEL
 label start:
@@ -294,18 +287,20 @@ label start:
         "Laki-laki" :  
             $ gender = "m"
             show lead netral
-            "kamu adalah laki-laki"
             jump prolog_0
         "Perempuan" :
             $ gender = "f"
             show lead netral
-            "kamu adalah perempuan"
             jump prolog_0
 
 #ADEGAN 0 PROLOG - RUANG KERJA {NAMA PEMAIN}
 label prolog_0:
-    scene bg prolog_0
+    hide lead netral
+    centered "Cerita dimulai..." with Dissolve(2.0)
+    
+    scene bg prolog_0 with Dissolve(1.0)
     narator "Suara detik jam bergema di ruang kerja yang sepi. Di layar komputer, angka dan grafik berjajar seperti tentara menunggu perintah."
+    show lead netral at center with moveinright
     narator "Duduklah seorang pegawai muda Pajak yang baru bekerja 3 bulan yang kerap disapa dengan [mc_name]."
     narator "Dirinya terlahir dari keluarga ningrat yang idealis dan berintegritas untuk membangun negeri."
 
@@ -313,9 +308,11 @@ label prolog_0:
     narator "Setiap angka bukan sekadar tulisan tapi angka punya konsekuensi yang akan berubah menjadi tanggung jawab."
 
     # (Suara notifikasi masuk di komputer {nama pemain}. --> sound
+    scene black
+    centered "\"Tugas Audit Baru: PT Cahaya Purnama Bakti — Penanggung Jawab: [mc_name].\"" with Dissolve(0.5)
 
-    narator "\"Tugas Audit Baru: PT Cahaya Purnama Bakti — Penanggung Jawab: [mc_name].\""
-
+    scene bg prolog_0 
+    show lead liat made at center
     narator "[mc_name] menatap layar dengan alis berkerut."
     narator "Perusahaan itu terasa tak asing baginya. Ia membuka dokumen, dan detik itu juga jantungnya berdetak lebih cepat."
 
@@ -328,10 +325,12 @@ label prolog_0:
 
 #ADEGAN 1 PROLOG - KANTOR PAJAK, PAGI HARI
 label prolog_1:
-    scene bg prolog_1
+    scene bg prolog_1 with Dissolve(1.0)
     # (Suara keyboard dan notifikasi sistem) --> sound
+    show raras wah at right with moveinright
     raras "Pagi, wah kelihatannya kamu seneng banget, dapet tugas audit pertama nih, iya gak [mc_name]?"
     
+    show lead ehh at left with moveinleft
     mc "Ehh Iya, makasi ya. Tapi sebetulnya, ini tentang perusahaan teman lamaku." #tersenyum kecil, menutup dokumen
 
     raras "Wah makin enak dong! Asal laporan sesuai, beres lah."
@@ -342,14 +341,16 @@ label prolog_1:
 
 #ADEGAN 2 PROLOG - RUANG RAPAT
 label prolog_2:
-    scene bg prolog_2
-    narator "Tiba di ruang rapat dengan peralatan serba digital. [mc_name] melangkah masuk dengan map di tangan, mengenakan tanda pengenal resmi pegawai pajak."
+    scene black
+    centered "Tiba di ruang rapat dengan peralatan serba digital. [mc_name] melangkah masuk dengan map di tangan, mengenakan tanda pengenal resmi pegawai pajak." with Dissolve(0.5)
+    centered "Di ruang rapat, Made Arya Wiradipa menunggunya dengan senyum lebar." with Dissolve(0.5)
 
-    narator "Di ruang rapat, Made Arya Wiradipa menunggunya dengan senyum lebar."
-
+    scene bg prolog_2 with Dissolve(1.0)
+    show made nyambut mc at right with moveinright
     made "[mc_name]! Wah, nggak nyangka sekarang lu kerja di pajak."
     made "Dunia kecil banget ya?"
 
+    show lead ngobrol made at left with moveinleft
     mc "Iya, lama banget kita nggak ketemu." #tersenyum kaku
     mc "Kebetulan banget ini tugas audit pertama gue."
 
@@ -357,7 +358,7 @@ label prolog_2:
     made "Kan dulu gue juga sering bantu lu waktu di kuliah"
     made "Sekarang giliran lu bantu gue."
 
-    mc "Apaan nih maksudnya Made..?" #dalam hati
+    mc "Apaan nih maksudnya Made..? #dalam hati" #dalam hati
 
     narator "Made meletakkan map tebal di meja dan menatap [mc_name] dengan serius."
 
@@ -365,19 +366,17 @@ label prolog_2:
     made "Tapi, [mc_name], semua ini bisa dibicarakan baik-baik."
     made "Gue nggak mau ada masalah besar. Lo ngerti kan maksud gue?"
 
+    scene black
+    centered "Keputusan apa yang akan kamu pilih? Ikutilah kata hatimu." with Dissolve(0.5)
     jump pilihan_mc
 
 #MEMILIH 3 PILIHAN MC
 label pilihan_mc:
     menu:
-        "Bantu Made dengan senang hati": #Relasi dengan Made menurun, Moralitas membaik
-            $ moral -= 1
-            $ relasi_made += 1
+        "Bantu Made dengan senang hati": 
             jump bantu_made
 
-        "Tolak membantu Made": #Relasi dengan Made membaik, Moralitas menurun
-            $ moral += 1
-            $ relasi_made -= 1
+        "Tolak membantu Made": 
             jump tolak_made
 
         "Ragu-ragu untuk membantu Made":
@@ -385,40 +384,62 @@ label pilihan_mc:
 
 #PILIHAN TOLAK MEMBANTU MADE
 label tolak_made:
-    narator "Made menatap [mc_name] lama, matanya penuh kekecewaan." 
+    centered "Made menatap [mc_name] lama, matanya penuh kekecewaan." with Dissolve(0.5)
     
+    scene bg prolog_2 with Dissolve(1.0)
+    show made kecewa at right
+    show lead diem at left
     made "Lu masih sama aja ya..."
     made "Dunia itu udah berubah. Integritas nggak bisa bikin lu bertahan lama di sistem pajak gini."
     #[mc_name] menatap Made tanpa kata, lalu berdiri dan menutup map di depannya
     mc "Sebetulnya, kalau data lu bersih dari awal, nggak ada yang perlu dikhawatirkan."
     mc "Sekarang, aku harus profesional."
 
-    narator "[mc_name] pergi meninggalkan ruangan yang sunyi."
-    narator "Di luar, hujan turun pelan seperti mengiringi keputusan yang mungkin benar, tapi tidak mudah."
+    scene black
+    centered "[mc_name] pergi meninggalkan ruangan yang sunyi." with Dissolve(0.5)
+    centered "Di luar, hujan turun pelan seperti mengiringi keputusan yang mungkin benar, tapi tidak mudah." with Dissolve(0.5)
+    centered "Beberapa minggu berlalu. Laporan audit selesai." with Dissolve(0.5)
+    centered "PT Cahaya Purnama Bakti dinyatakan bersalah atas manipulasi pajak." with Dissolve(0.5)
+    centered "Made dijatuhi hukuman penutupan usaha, sementara [mc_name] dipanggil oleh Raden Bagus ke ruangannya." with Dissolve(0.5)
 
-    narator "Beberapa minggu berlalu. Laporan audit selesai."
-    narator "PT Cahaya Purnama Bakti dinyatakan bersalah atas manipulasi pajak."
-    narator "Made dijatuhi hukuman penutupan usaha, sementara [mc_name] dipanggil oleh Raden Bagus ke ruangannya."
-
+    scene ruang raden with Dissolve(1.0)
+    show raden bangga at right with moveinright
+    show lead netral at left with moveinleft
     raden "Kerja bagus, [mc_name]."
     raden "Di instansi ini, orang seperti kamu langka."
     raden "Aku ingin kamu memimpin sektor Zona Selatan"
     raden "Mulai minggu depan, kamu akan memantau Tax Counter warga di TAXNET. Semua datanya langsung di bawah pengawasanmu."
     #latar tempat berubah menjadi ruang kerja mc yang baru, tempat yang lebih besar dan nyaman
-    narator "[mc_name] menatap layar besar di ruang kerjanya yang baru - ribuan nama, angka, dan warna."
-    narator "Hijau artinya aman. Kuning artinya diawasi. Merah artinya... 30 hari menuju eksekusi."
 
+    scene black
+    centered "[mc_name] pun pindah ke ruang kerjanya yang baru, tempat yang jauh lebih besar dan nyaman." with Dissolve(0.5)
+
+    scene ruang kerja mc with Dissolve(1.0)
+    show lead netral at center with moveinbottom
+    narator "[mc_name] menatap layar besar di ruang kerjanya yang baru - ribuan nama, angka, dan warna."
+    
+    scene black
+    centered "Hijau artinya aman. Kuning artinya diawasi. Merah artinya... 30 hari menuju eksekusi." with Dissolve(0.5)
+
+    scene ruang kerja mc with Dissolve(1.0)
+    show lead taxnet
     mc "Eksekusi...? Apa yang dimaksud dengan kebijakan eksekusi...?" #dalam hati termenung
 
-    narator "Beberapa bulan kemudian, [mc_name] mulai terbiasa memantau Tax Counter warga di TAXNET."
-    narator "Hingga suatu malam, nama Raras Wulandari muncul di daftar merah."
-    narator "Penyebab: \"Ketidaksesuaian pelaporan gaji.\""
+    scene black
+    centered "Beberapa bulan kemudian, [mc_name] mulai terbiasa memantau Tax Counter warga di TAXNET." with Dissolve(0.5)
+    centered "Hingga suatu malam, nama Raras Wulandari muncul di daftar merah." with Dissolve(0.5)
+    centered "Penyebab: \"Ketidaksesuaian pelaporan gaji.\"" with Dissolve(0.5)
 
+    scene ruang kerja mc with Dissolve(1.0)
+    show lead diem
     narator "[mc_name] tahu Raras tidak bersalah."
     narator "Tapi untuk menyelematkannya, [mc_name] harus mengubah sistem TAXNET, dan itu merupakan aksi yang dianggap pengkhianatan."
     
     narator "[mc_name] pergi untuk menemui Raras tentang masalah ini."
     
+    scene cafe raras with Dissolve(1.0)
+    show raras shock at right with moveinright
+    show lead diem at left with moveinleft
     raras "Hah...kok bisa?? Tapi, kau tau aku bukan orang jahat, kan?"
     raras "Mereka nggak peduli data benar atau salah, sistem ini janggal!"
 
@@ -431,34 +452,37 @@ label tolak_made:
 #MEMILIH MENYELEMATKAN RARAS ATAU TIDAK
 label pilihan_selamatkan_raras:
     menu:
-        "Menyelamatkan Raras": #Relasi dengan Raras membaik, moral membaik
-            $ relasi_raras += 2
-            $ moral += 1
+        "Menyelamatkan Raras": 
             jump selamatkan_raras
 
-        "Tidak menyelematakan Raras": #Relasi dengan Raras menurun, moral menurun
-            $ relasi_raras -= 2
-            $ moral -= 1
+        "Tidak menyelematakan Raras": 
             jump tidak_selamatkan_raras
 
 #PILIHAN SELAMATKAN RARAS
 label selamatkan_raras:
-    narator "Lampu berkedip. Jari [mc_name] menekan perintah \"DELETE LOG\"."
-    narator "Sistem berhenti beberapa detik, lalu menampilkan pesan:"
-    narator "✅ Data Alomani Dihapus. Counter Raras Wulandari: 0."
-    narator "Raras selamat."
-    narator "Namun, di sistem keamanan pusat, ada jejak log yang mencurigakan - tanda digital yang tidak bisa dihapus sepenuhnya."
+    scene black
+    centered "Lampu berkedip. Jari [mc_name] menekan perintah \"DELETE LOG\"." with Dissolve(0.5)
+    centered "Sistem berhenti beberapa detik, lalu menampilkan pesan:" with Dissolve(0.5)
+    centered "✅ Data Alomani Dihapus. Counter Raras Wulandari: 0." with Dissolve(0.5)
+    centered "Raras selamat." with Dissolve(0.5)
+    centered "Namun, di sistem keamanan pusat, ada jejak log yang mencurigakan - tanda digital yang tidak bisa dihapus sepenuhnya." with Dissolve(0.5)
+    centered "Keesokan harinya, Raras datang ke meja [mc_name]." with Dissolve(0.5)
 
-    narator "Keesokan harinya, Raras datang ke meja [mc_name]."
-
+    scene ruang mc pagi with Dissolve(1.0)
+    show raras lega at right with moveinright
     raras "Aduhh [mc_name], aku nggak tau gimana, tapi tiba-tiba data pajakku normal lagi."
     raras "Kayaknya ada malaikat di kantor ini."
 
-    mc "Tapi, bukannya Raras tahu cuman aku yang punya akses ke data internal TAXET...?" #dalam hati, tersenyum kecil, menahan rasa bersalah
+    show lead senang at left with moveinleft
+    mc "Tapi, bukannya Raras tahu cuman aku yang punya akses ke data internal TAXET...? #dalam hati" #dalam hati, tersenyum kecil, menahan rasa bersalah
 
-    narator "Beberapa minggu kemudian, Raden Bagus memanggilnya ke ruang rapat."
-    narator "Ruang itu dingin, suara mesin server bergema di dinding logam."
+    scene black
+    centered "Beberapa minggu kemudian, Raden Bagus memanggilnya ke ruang rapat." with Dissolve(0.5)
+    centered "Ruang itu dingin, suara mesin server bergema di dinding logam."with Dissolve(0.5)
 
+    scene ruang rapat with Dissolve(1.0)
+    show raden memanggil at right with moveinright
+    show lead menghadap raden at left with moveinleft
     raden "Ada satu anomali di data Wilayah Timur."
     raden "Seseorang menghapus log tanpa izin."
 
@@ -482,21 +506,22 @@ label selamatkan_raras:
 #MEMILIH ALASAN KE RADEN (JUJUR ATAU TIDAK)
 label pilihan_alasan_ke_raden:
     menu:
-        "Jujur pada Raden": #Relasi dengan Raden membaik, moral membaik
-            $ moral += 1
-            $ relasi_raden += 1
+        "Jujur pada Raden":
             jump alasan_jujur
 
-        "Tidak jujur pada Raden": #Relasi dengan Raden menurun
-            $ relasi_raden -= 2
+        "Tidak jujur pada Raden":
             jump alasan_tidak_jujur
 
 #PILIHAN JUJUR PADA RADEN
 label alasan_jujur:
+    scene ruang rapat
+    show lead jujur at left
+    show raden memanggil at right
     mc "Saya tahu ini salah, Pak."
     mc "Tapi kalau saya biarkan, Raras akan dihapus dari sistem."
     mc "Saya cuma... nggak bisa tinggal diam."
 
+    show raden bangga
     narator "Raden menatap [mc_name] lama. Wajahnya tenang, tapi matanya tajam, seperti sedang menimbang sesuatu yang lebih dalam dari sekadar laporan pelanggaran."
 
     raden "Dulu saya juga pernah melakukan hal yang sama."
@@ -507,15 +532,20 @@ label alasan_jujur:
 
     raden "Keluar lewat pintu belakang. Aku akan hapus log terakhirmu... satu kali lagi."
 
-    narator "[mc_name] menatap Raden dengan tatapan kosong."
-    narator "Ia meninggalkan kantor dengan langkah pelan."
-    narator "Di luar, sinar matahari sore memantul di gedung-gedung logam - indah tapi terasa asing."
+    scene black
+    centered "[mc_name] menatap Raden dengan tatapan kosong." with Dissolve(0.5)
+    centered "Ia meninggalkan kantor dengan langkah pelan."with Dissolve(0.5)
+    centered "Di luar, sinar matahari sore memantul di gedung-gedung logam - indah tapi terasa asing." with Dissolve(0.5)
 
+    scene diusir raden
+    show raras akhir at right with moveinright
+    show lead dipindah at left with moveinleft
     raras "[mc_name]! Aku dengar kamu dipindahkan ya?"
     raras "Jangan lupa kirim pesan, ya!"
 
-    narator "[mc_name] menoleh sebentar, tersenyum kecil."
-    narator "Ia kehilangan pekerjaannya, tapi menemukan kembali nuraninya."
+    scene black
+    centered "[mc_name] menoleh sebentar, tersenyum kecil."
+    centered "Ia kehilangan pekerjaannya, tapi menemukan kembali nuraninya."
 
     jump ending_honesty
 
@@ -524,13 +554,16 @@ label ending_honesty:
     scene black
     with fade
 
-    narator "ENDING: In Honesty, Lies Clarity"
-    narator "Dalam dunia yang menghapus kesalahan dengan satu klik, [mc_name] memilih untuk tetap salah demi menjadi manusia."
+    centered "ENDING: In Honesty, Lies Clarity"
+    centered "Dalam dunia yang menghapus kesalahan dengan satu klik, [mc_name] memilih untuk tetap salah demi menjadi manusia."
 
     return
 
 #PILIHAN TIDAK JUJUR PADA RADEN
 label alasan_tidak_jujur:
+    scene ruang rapat
+    show lead debat raden at left 
+    show raden berdebat at right
     mc "Saya tahu kejanggalan dalam pekerjaan ini. Sistem ini rusak, Pak."
     mc "Saya tahu ada rahasia lebih dalam yang disembunyikan. Ada operasi tak ternama dibalik semua eksekusi itu."
     
@@ -541,61 +574,79 @@ label alasan_tidak_jujur:
 
     mc "Justru karena itu saya ingin tahu."
 
-    narator "Suara sistem menyela percakapan."
-    narator "📢 ALERT: Unauthorized Access Detected - User: [mc_name]."
+    scene black
+    centered "Suara sistem menyela percakapan."
+    centered "📢 ALERT: Unauthorized Access Detected - User: [mc_name]."
 
+    scene ruang rapat alarm
     narator "Lampu ruangan berkedip merah. Raden menekan tombol di mejanya, tapi layar di belakang tiba-tiba menampilkan folder tersembunyi:"
     narator "PROJECT HUMAN FILTER PROTOCOL"
     narator "Raden membeku. [mc_name] tersenyum samar."
-
+    
+    show lead lampu merah at left 
+    show raden lampu merah at right
     mc "Ternyata benar ya, Pak. Bukan sistem yang salah. Orang dibaliknya yang bermain."
 
     raden "Kau pikir kau bisa hentikan ini? Sistem ini lebih tua dari pemerintah itu sendiri."
 
     mc "Kalau begitu, saya akan mulai dari akar"
 
-    narator "Layar TAXNET bergetar"
-    narator "[mc_name] menemukan perintah baru tersembunyi di log administrator."
+    scene black
+    centered "Layar TAXNET bergetar"
+    centered "[mc_name] menemukan perintah baru tersembunyi di log administrator."
     #Latar: Server Room TAXNET, larut malam. Hanya lampu merah darurat yang menyala. Suara mesin berdengung berat.
-    narator "Jari-jarinya bergetar saat menekan perintah tersembunyi:"
-    narator "> EXECUTE: SEARCH_OVERSIGHT_PROTOCOL -admin=true"
-    narator "Layar bergetar. Suara sistem berbisik, seolah-olah sadar akan perintah itu."
-    narator "📢 Warning: You are accessing restricted layers. Oversight Level 0 detected."
-    narator "Tiba-tiba, muncul sederet log dengan nama-nama."
-    narator "Sebagian sudah diberi tanda \"TERHAPUS - SESUAI PROTOKOL\". Salah satunya adalah \"Raras Wuladari - Review Pending\", dengan catatan:"
-    narator "\"Target diselamatkan. Jejak digital menyimpang. Investigasi oleh Raden B.\""
-    narator "[mc_name] terdiam."
+    centered "Jari-jarinya bergetar saat menekan perintah tersembunyi:"
+    centered "> EXECUTE: SEARCH_OVERSIGHT_PROTOCOL -admin=true"
+    centered "Layar bergetar. Suara sistem berbisik, seolah-olah sadar akan perintah itu."
+    centered "📢 Warning: You are accessing restricted layers. Oversight Level 0 detected."
+    centered "Tiba-tiba, muncul sederet log dengan nama-nama."
+    centered "Sebagian sudah diberi tanda \"TERHAPUS - SESUAI PROTOKOL\". Salah satunya adalah \"Raras Wuladari - Review Pending\", dengan catatan:"
+    centered "\"Target diselamatkan. Jejak digital menyimpang. Investigasi oleh Raden B.\""
+    centered "[mc_name] terdiam."
 
+    scene bola cahaya 1
+    show lead liat liat nama raden at center
     mc "Raden... bukan hanya tahu, dia bagian dari sistem ini."
 
-    narator "Lampu ruangan menyala tiba-tiba."
-    narator "Raden berdiri di pintu, menatapnya tanpa ekspresi."
+    scene black
+    centered "Lampu ruangan menyala tiba-tiba."
+    centered "Raden berdiri di pintu, menatapnya tanpa ekspresi."
 
+    scene bola cahaya 1
+    show raden mergokin mc at right
+    show lead ketauan at left
     raden "Kau tak seharusnya sampai di sini."
 
     mc "Jadi benar. Kau yang menghapus orang-orang itu dari sistem, bukan karena kesalahan data - tapi karena kepentingan?"
     
     narator "Raden tersenyum kecil."
 
+    show raden senyum tipis
     raden "Kau pikir dunia ini bisa stabil tanpa pengorbanan? Sistem ini diciptakan bukan untuk adil, tapi untuk efisien."
 
     narator "[mc_name] menatap layar, menekan satu perintah lagi."
     narator "> UPLOAD_ALL_TO_PUBLIC_NODE"
-
+    
+    show raden jangan bodoh
     raden "Jangan bodoh! Itu akan menimbulkan kekacauan!"
 
     mc "Lebih baik kacu... daripada salah tetap tersembunyi"
 
     narator "📢 Upload initiated: 5%... 20%... 60%..."
     narator "Raden menarik pistol keamanan dari sakunya, menodongkan ke arah [mc_name]."
-
+    
+    show raden keluarin pistol
     raden "Berhenti sekarang, atau semua akan berakhir untukmu!"
 
     narator "[mc_name] menatap tenang."
 
-    mc "Sudah berakhir, Pak. Dari awal saat saya menyelamatkan Raras, saya tahu saya nggak bisa kembali lagi."
+    show lead berhasil upload
+    mc "Sudah berakhir, Pak. Dari awal saat saya menyelamatkan Raras, saya tahu saya nggak bisa kembali lagi."  
+    
+    scene black
+    centered "📢 Upload complete: 100%"
 
-    narator "📢 Upload complete: 100%"
+    scene ruang rapat kembali pulih
     narator "Layar terminal berubah menjadi putih. Semua data, semua manipulasi, semua korban Human Filter Protocol kini tersebar ke publik."
     narator "Sistem TAXNET runtuh dari dalam."
 
@@ -606,30 +657,40 @@ label epilog:
     scene black
     with dissolve
 
-    narator "Berita di layar holo menampilkan:"
-    narator "\"Skandal besar mengguncang TAXNET. Data rahasia bocor ke publik. Beberapa pejabat tinggi ditahan.\""
-    narator "Raras membaca berita itu di meja kerja kecilnya."
-    narator "Ia menatap foto [mc_name] di berkas lama - kini bertuliskan \"Hilang, Tidak Diketahui.\""
+    centered "Berita di layar holo menampilkan:"
+    centered "\"Skandal besar mengguncang TAXNET. Data rahasia bocor ke publik. Beberapa pejabat tinggi ditahan.\""
+    centered "Raras membaca berita itu di meja kerja kecilnya."
+    centered "Ia menatap foto [mc_name] di berkas lama - kini bertuliskan \"Hilang, Tidak Diketahui.\""
 
+    scene meja kerja raras
+    show raras baca berita at center
     raras "Kamu benar... sistem nggak bisa diselamatkan tanpa kejujuran."
 
-    narator "Kamera menyorot server kosong TAXNET yang kini terbengkalai."
-    narator "Lampu birunya berkedip sekali, lalu mati."
-    narator "📢 USER LOGOUT - OVERSIGHT PROTOCOL TERMINATED."
-    narator "SECRET ENDING: Veni, Vidi, Vici"
-    narator "Kebenaran selalu punya harga. Terkadang, nyawa adalah bayarannya."
+    scene black
+    centered "Kamera menyorot server kosong TAXNET yang kini terbengkalai."
+    centered "Lampu birunya berkedip sekali, lalu mati."
+    centered "📢 USER LOGOUT - OVERSIGHT PROTOCOL TERMINATED."
+    centered "SECRET ENDING: Veni, Vidi, Vici"
+    centered "Kebenaran selalu punya harga. Terkadang, nyawa adalah bayarannya."
 
     return
 
 #PILIHAN TIDAK SELAMATKAN RARAS
 label tidak_selamatkan_raras:
     #Layar menampilkan hitungan mundur 02:15:47, Raras menelpon berkali-kali, tak dijawab.
+    scene ruang kerja lama
+    show lead senyum bahagia at center
     narator "[mc_name] duduk diam. Ia memilih menutup semua jendela sistem, membiarkan mekanisme berjalan seperti biasa."
-    narator "Esoknya, sebuah pesan sistem muncul:"
-    narator "🔔 Eksekusi Digital: Raras Wulandari - Completed."
-    narator "Kursi di sebelah meja kerjanya kosong. Tak ada lagi tawa ceria setiap pagi."
-    narator "Raden Bagus menghampirinya."
+    
+    scene black
+    centered "Esoknya, sebuah pesan sistem muncul:"
+    centered "🔔 Eksekusi Digital: Raras Wulandari - Completed."
+    centered "Kursi di sebelah meja kerjanya kosong. Tak ada lagi tawa ceria setiap pagi."
+    centered "Raden Bagus menghampirinya."
 
+    scene ruang kerja lama
+    show raden bangga at right with moveinright
+    show lead senyum bahagia at left
     raden "Bagus. Kamu tidak membiarkan perasaan menguasai logika. Negara butuh pegawai seperti kamu."
 
     narator "[mc_name] hanya mengangguk."
@@ -639,10 +700,15 @@ label tidak_selamatkan_raras:
     narator "Suasana kantor terasa lebih hening dari biasanya."
     narator "Suara mesin pemindai data terdengar monoton.[mc_name] duduk di mejanya, menatap layar yang menampilkan laporan-laporan bersih tanpa cela."
     narator "Namun, di dalam kolom catatan sistem, ada satu entri yang tak bisa ia hapus:"
-    narator "📢 WULANDARI_RARAS.LOG - \"Final Transmission Incomplete.\""
-    narator "Setiap kali sistem memproses data baru, notifikasi itu muncul lagi. Seolah sistem mengingatkan bahwa ada sesuatu yang hilang — atau seseorang."
-    narator "Raden Bagus masuk ke ruangan."
 
+    scene black
+    centered "📢 WULANDARI_RARAS.LOG - \"Final Transmission Incomplete.\""
+    centered "Setiap kali sistem memproses data baru, notifikasi itu muncul lagi. Seolah sistem mengingatkan bahwa ada sesuatu yang hilang — atau seseorang."
+    centered "Raden Bagus masuk ke ruangan."
+
+    scene ruang kerja lama
+    show raden bangga at right with moveinright
+    show lead senyum bahagia at left
     raden "[mc_name], hasil audit wilayah timur meningkat drastis. Pusat sangat puas. Mereka mempertimbangkanmu untuk promosi."
 
     narator "[mc_name] menoleh perlahan."
@@ -656,6 +722,8 @@ label tidak_selamatkan_raras:
     narator "[mc_name] terdiam. Suara pendingin server berdengung seperti napas panjang yang berat."
     narator "Ia tahu ia sedang naik pangkat - tapi mengapa terasa seperti tenggelam?"
     #Latar kantor baru dua bulan kemudian
+    scene ruang kerja baru
+    show lead kantor baru at center
     narator "Kantornya kini jauh lebih besar, tapi lebih sepi."
     narator "Di dinding, terdapat layar besar bertuliskan: 🔔 \"Integrity Is Efficiency.\""
     narator "Di mejanya, sistem TAXNET versi baru sedang diuji."
@@ -665,8 +733,9 @@ label tidak_selamatkan_raras:
     narator "[mc_name] terpaku. Tak ada orang yang menulis catatan itu."
     narator "Mungkin bug. Mungkin pesan. Atau mungkin, sistem juga punya kenangan."
     #Layar redup, kamera mendekat ke wajah mc
-    narator "Ia tidak melakukan kesalahan. Ia tidak berkhianat pada jabatannya. Tapi di dalam hatinya, sesuatu telah mati bersama nama Raras Wulandari."
-    narator "Suara narator muncul pelan, seperti gema dalam data:"
+    scene black
+    centered "Ia tidak melakukan kesalahan. Ia tidak berkhianat pada jabatannya. Tapi di dalam hatinya, sesuatu telah mati bersama nama Raras Wulandari."
+    centered "Suara narator muncul pelan, seperti gema dalam data:"
     
     jump ending_stillness
 
@@ -675,35 +744,51 @@ label ending_stillness:
     scene black
     with fade
 
-    narator "ENDING: Stillness Brings Cruelty"
-    narator "Terkadang, menjaga sistem berarti kehilangan sisi manusia dan dalam dunia yang diawasi angka, yang beku bukan hanya data - tapi hati mereka yang memilih diam."
+    centered "ENDING: Stillness Brings Cruelty"
+    centered "Terkadang, menjaga sistem berarti kehilangan sisi manusia dan dalam dunia yang diawasi angka, yang beku bukan hanya data - tapi hati mereka yang memilih diam."
 
     return
 
 #PILIHAN BANTU MADE
 label bantu_made:
+    scene bg prolog_2
+    show made puas at right
+    show lead senyum at left 
     made "Nah, gitu dong. Gue tahu lu orang baik, [mc_name]."
     made "Dunia sekarang butuh yang bisa \"menyesuaikan diri\"."
 
     narator "[mc_name] tahu ini salah, tapi kata-katanya menenangkan. [mc_name] mulai menyesuaikan angka laporan. Satu perubahan kecil. Tidak akan ada yang tahu, pikirnya."
-    narator "Audit selesai. PT Cahaya Purnama Bakti dinyatakan \"aman\""
-    narator "Beberapa hari kemudian, [mc_name] menerima pesan dari Made - \"Makasih, bro. Lu bakal naik cepat.\""
-    narator "Dan benar saja, Raden Bagus memanggil [mc_name] masuk ke ruangannya."
+    
+    scene black
+    centered "Audit selesai. PT Cahaya Purnama Bakti dinyatakan \"aman\""
+    centered "Beberapa hari kemudian, [mc_name] menerima pesan dari Made - \"Makasih, bro. Lu bakal naik cepat.\""
+    centered "Dan benar saja, Raden Bagus memanggil [mc_name] masuk ke ruangannya."
 
+    scene ruang rapat
+    show raden bangga at right
+    show lead menghadap raden at left
     raden "Kamu efisien. Data rapi, cepat, tanpa noise. Sistem butuh orang seperti kamu."
 
-    narator "[mc_name] dipromosikan menjadi Supervisor TAXNET Sektor Selatan"
-    narator "Tapi sejak itu, [mc_name] mulai sering menerima \"permintaan\" aneh. Perusahaan besar meminta audit disamarkan. Warga kecil tiba-tiba jatuh ke status merah."
+    scene black
+    centered "[mc_name] dipromosikan menjadi Supervisor TAXNET Sektor Selatan"
+    centered "Tapi sejak itu, [mc_name] mulai sering menerima \"permintaan\" aneh. Perusahaan besar meminta audit disamarkan. Warga kecil tiba-tiba jatuh ke status merah."
 
+    scene cafe raras
+    show raras tanya at right
+    show lead ngobrol sama raras at left
     raras "Ada kabar kalau ada warga yang dieksekusi, [mc_name]. Tapi hal ini nggak masuk akal.. Lu ada kabar gak?"
     
     mc "Mungkin sistem aja yang salah… atau mungkin memang sudah sepantasnya terjadi begitu."
 
-    narator "Suatu hari, [mc_name] menerima laporan eksekusi massal - 1.200 warga Zona Selatan terhapus dari sistem."
-    narator "Penyebabnya? Koreksi data audit Made Arya Wiradipa."
-    narator "Ternyata, perbaikan kecil [mc_name] dulu membuat hutang Made dialihkan ke ribuan nama orang miskin."
-    narator "Raras menemukan bukti dan menghadapkannya kepada [mc_name]."
+    scene black
+    centered "Suatu hari, [mc_name] menerima laporan eksekusi massal - 1.200 warga Zona Selatan terhapus dari sistem."
+    centered "Penyebabnya? Koreksi data audit Made Arya Wiradipa."
+    centered "Ternyata, perbaikan kecil [mc_name] dulu membuat hutang Made dialihkan ke ribuan nama orang miskin."
+    centered "Raras menemukan bukti dan menghadapkannya kepada [mc_name]."
 
+    scene cafe raras
+    show raras tanya at right
+    show lead ngobrol sama raras at left
     raras "Semua ini gara gara kamu ya…?! Kamu yang ubah datanya!"
 
     mc "Gue cuma bantu temen… gue nggak tahu efeknya sebesar ini…"
@@ -713,14 +798,10 @@ label bantu_made:
 #MEMILIH BUKTI (MENUTUPI, MEMBOCORKAN, MENGHANCURKAN)
 label pilihan_bukti_raras:
     menu:
-        "Menutupi Bukti": #Relasi dengan Raras menurun, Moral menurun
-            $ moral -= 2
-            $ relasi_raras -= 2
+        "Menutupi Bukti":
             jump menutupi_bukti
         
-        "Mengaku dan Membocorkan Data": #Relasi dengan Raras membaik, Moral membaik
-            $ moral += 1
-            $ relasi_raras += 1
+        "Mengaku dan Membocorkan Data": 
             jump bocor_data
 
         "Menghancurkan TAXNET": 
@@ -728,37 +809,55 @@ label pilihan_bukti_raras:
 
 #PILIHAN MENUTUPI BUKTI
 label menutupi_bukti:
+    scene ruang kerja mc suram
+    show lead bingung at left
     narator "[mc_name] menatap layar terminal. Data kejahatan sistem sudah terbuka lebar. Cukup satu sentuhan untuk menghapus semuanya - seolah tak pernah terjadi"
     narator "Tangannya bergetar, tapi ia menekan tombol \"HAPUS LOG\"."
     narator "Layar redup. Cahaya ruangan kembali biru tenang."
     
+    show raden bangga at right
     raden "Keputusan yang cerdas. Kadang yang tahu kebenaran, tak perlu berbicara."
 
-    narator "[mc_name] dipromosikan. Dunia tetap berjalan. Raras, Made, dan jutaan nama yang lenyap dari sistem tak pernah disebut lagi."
-    narator "Setiap pagi [mc_name] datang ke kantor, mendengar detik jam, dan meyakinkan diri: \"Aku hanya menjalankan tugas.\""
-    narator "Namun setiap malam, [mc_name] melihat pantulan wajahnya di kaca - kosong, seperti layar TAXNET yang sudah bersih."
-    narator "Beberapa bulan setelah promosi besar itu, kehidupan [mc_name] terlihat sempurna."
-    narator "Ia punya ruangan sendiri, akses penuh ke database pusat, dan penghormatan dari seluruh staf."
-    narator "Namun setiap malam, ia mulai mendengar suara samar dari dalam sistem."
-    narator "Bukan bug. Bukan data rusak. Tapi suara manusia. Suara Raras."
-
+    scene black
+    centered "[mc_name] dipromosikan. Dunia tetap berjalan. Raras, Made, dan jutaan nama yang lenyap dari sistem tak pernah disebut lagi."
+    centered "Setiap pagi [mc_name] datang ke kantor, mendengar detik jam, dan meyakinkan diri: \"Aku hanya menjalankan tugas.\""
+    centered "Namun setiap malam, [mc_name] melihat pantulan wajahnya di kaca - kosong, seperti layar TAXNET yang sudah bersih."
+    centered "Beberapa bulan setelah promosi besar itu, kehidupan [mc_name] terlihat sempurna."
+    centered "Ia punya ruangan sendiri, akses penuh ke database pusat, dan penghormatan dari seluruh staf."
+    centered "Namun setiap malam, ia mulai mendengar suara samar dari dalam sistem."
+    centered "Bukan bug. Bukan data rusak. Tapi suara manusia. Suara Raras."
+    
+    show raras masih ingat at center
     raras "Kau masih ingat, ya, janji kita dulu? Membuat sistem yang adil..."
 
+    scene ruang kerja baru mc suram
+    show lead bingung at center
     narator "[mc_name] terdiam di depan layar, mencoba mencari sumber suara itu. Tapi yang muncul hanyalah baris kode dengan pesan aneh:"
-    narator "echo://Raras_Wulandari//active.memory/log142"
-    narator "Ia membuka log itu - dan menemukan rekaman audit lama, tepat saat ia pertama kali \"mengubah angka\" untuk Made."
-    narator "Namun kali ini, rekamannya berbeda. Dalam video itu, bukan Made yang duduk di seberang meja, melainkan..."
-    narator "dirinya sendiri."
+    
+    scene black
+    centered "echo://Raras_Wulandari//active.memory/log142"
+    centered "Ia membuka log itu - dan menemukan rekaman audit lama, tepat saat ia pertama kali \"mengubah angka\" untuk Made."
+    centered "Namun kali ini, rekamannya berbeda. Dalam video itu, bukan Made yang duduk di seberang meja, melainkan..."
+    centered "dirinya sendiri."
+    
+    scene ruang kerja baru mc suram
+    show lead bingung at center
     narator "[mc_name] menatap layar tak percaya."
 
     mc "Ini... apa maksudnya?"
 
-    narator "Sistem mulai bergetar. Lampu ruangan meredup. Suara Raden muncul dari speaker:"
+    scene black
+    centered "Sistem mulai bergetar. Lampu ruangan meredup. Suara Raden muncul dari speaker:"
 
+    scene ruang kerja baru mc suram
+    show lead bingung at center
     raden "Akhirnya kamu sampai juga di fase terakhir, [mc_name]. Kau mengaudit dirimu sendiri."
 
-    narator "Data di layar berganti cepat - grafik, laporan, tanda tangan digital, hingga akhirnya muncul satu file terakhir:"
-    narator "LAPORAN KEMATIAN PEGAWAI: [mc_name]"
+    scene black
+    centered "Data di layar berganti cepat - grafik, laporan, tanda tangan digital, hingga akhirnya muncul satu file terakhir:"
+    centered "LAPORAN KEMATIAN PEGAWAI: [mc_name]"
+    
+    scene tampilan pencoretan
     narator "Tanggal wafat: 2 bulan sebelum audit PT Cahaya Purnama Bakti."
     narator "Darahnya seakan berhenti mengalir."
     narator "Tangannya gemetar saat membaca catatan kecil di bawah dokumen itu:"
@@ -773,13 +872,14 @@ label menutupi_bukti:
 
     raras "Kau pikir kita menyelamatkan sistem? Tidak. Sistem yang menyimpan kita... agar tetap bekerja."
 
-    narator "Cahaya ruangan mulai padam satu per satu."
-    narator "[mc_name] berusaha mematikan server, tapi jari-jarinya membeku, tubuhnya kaku. Suara Raden terdengar terakhir kalinya:"
+    scene black
+    centered "Cahaya ruangan mulai padam satu per satu."
+    centered "[mc_name] berusaha mematikan server, tapi jari-jarinya membeku, tubuhnya kaku. Suara Raden terdengar terakhir kalinya:"
 
     raden "Tugas selesai. Simulasi kesadaran #142 mencapai stabilitas penuh. Subjek siap untuk terminasi."
 
-    narator "Sekejap kemudian, layar memudar. Detak jantung buatan di ruang server berhenti. Satu file terakhir tersimpan otomatis:"
-    narator "FinalLog142: Operator dinyatakan bersih dari keraguan moral."
+    centered "Sekejap kemudian, layar memudar. Detak jantung buatan di ruang server berhenti. Satu file terakhir tersimpan otomatis:"
+    centered "FinalLog142: Operator dinyatakan bersih dari keraguan moral."
     
     jump ending_verdict
 
@@ -788,19 +888,24 @@ label ending_verdict:
     scene black
     with fade
 
-    narator "ENDING: Your Verdict Is..."
-    narator "Dan di dunia nyata - di sebuah ruangan laboratorium sunyi - lampu kapsul nomor 142 padam."
-    narator "Sebuah label kecil menempel di kaca:"
-    narator "Nama: [mc_name]. Status: Meninggal dunia."
+    centered "ENDING: Your Verdict Is..."
+    centered "Dan di dunia nyata - di sebuah ruangan laboratorium sunyi - lampu kapsul nomor 142 padam."
+    centered "Sebuah label kecil menempel di kaca:"
+    centered "Nama: [mc_name]. Status: Meninggal dunia."
 
     return
 
 #PILIHAN MENGAKU DAN MEMBOCORKAN DATA
 label bocor_data:
+    scene alarm bunyi
+    show lead senyum kesal at center
     narator "[mc_name] menyalakan koneksi eksternal rahasia - jalur data bawah tanah yang pernah diperlihatkan Raras."
     narator "Ia memindahkan seluruh arsip ke jaringan publik."
+    scene kondisi hancur
     narator "Dalam 10 detik, kebusukan TAXNET tersebar ke seluruh layar masyarakat."
     #Suara alarm global berbunyi. Raden berteriak di layar komunikasi
+    show raden kesal at right
+    show lead senyum kesal at left
     raden "Apa yang kau lakukan!? Dunia akan kacau!"
 
     mc "Biar kacau... asal manusia tahu siapa yang menghitung hidup mereka."
@@ -812,22 +917,26 @@ label ending_shadow:
     scene black
     with fade
 
-    narator "Sistem pusat menandainya sebagai pengkhianat negara. Wajahnya tersebar di setiap papan digital, label merah besar:"
-    narator "DISRUPTIVE ENTITY - PRIORITY ELIMINATION."
-    narator "Raras hilang tanpa kabar. Made diburu karena koneksinya dengannya."
+    centered "Sistem pusat menandainya sebagai pengkhianat negara. Wajahnya tersebar di setiap papan digital, label merah besar:"
+    centered "DISRUPTIVE ENTITY - PRIORITY ELIMINATION."
+    centered "Raras hilang tanpa kabar. Made diburu karena koneksinya dengannya."
 
     return
 
 #PILIHAN MENGHANCURKAN TAXNET
 label hancur_taxnet:
+    scene bola cahaya 1
+    show lead senyum kesal at center
     narator "[mc_name] memegang kartu identitasnya - kunci administrator tersembunyi yang ia curi dari Raden."
     narator "Ia tahu, jika kode ini dimasukkan ke inti TAXNET, sistem akan menolak keberadaannya sendiri."
     narator "Harga dari reset ini: semua koneksi digital, termasuk dirinya yang terikat pada data pegawai, akan ikut lenyap."
-
+    show lead senyum kesal at left
+    show raras shock at right
     raras "[mc_name]... jangan. Kalau sistem hancur, semua catatan manusia juga akan hilang."
 
     mc "Mungkin itu yang seharusnya. Dunia harus mulai dari nol."
 
+    scene kondisi dunia riset
     narator "\"WARNING: CORE DELETION CONFIRMED. ALL ENTITY DATA WILL BE PURGED.\""
     
     jump ending_ashes
@@ -837,7 +946,9 @@ label ending_ashes:
     scene black
     with fade
 
-    narator "Cahaya meledak seperti siang yang tak berujung. Seluruh kota kehilangan sinyal, layar-layar mati, dan suara mesin berhenti."
+    centered "Cahaya meledak seperti siang yang tak berujung. Seluruh kota kehilangan sinyal, layar-layar mati, dan suara mesin berhenti."
+    
+    scene kondisi internet padam
     narator "Beberapa hari kemudian, dunia terbangun tanpa TAXNET. Tak ada data. Tak ada kontrol. Tak ada [mc_name]."
     narator "Namun dari reruntuhan sistem, masyarakat mulai menulis ulang hidup mereka - bukan dengan angka, tapi dengan tangan mereka sendiri."
 
@@ -845,13 +956,18 @@ label ending_ashes:
 
 #PILIHAN RAGURAGU MEMBANTU MADE
 label ragu_made:
+    scene bg prolog_2
+    show made sedikit lega at right
+    show lead madenya sedikit lega
     made "Oke, lu lihat aja dulu. Gue yakin lu bakal ngerti kenapa gue kayak gini."
 
+    scene ruang kerja malam
     narator "[mc_name] membawa pulang data audit. Angka-angkanya tampak ada yang janggal dan bisa dibilang \"terlalu sempurna\" untuk hasil yang alami."
     narator "Setelah diperiksa, [mc_name] menemukan pola aneh: TAXNET menggandakan pajak untuk perusahaan yang memiliki aktivitas sosisal tinggi."
     narator "Sistem ini sengaja menekan perusahaan yang dianggap terlalu mandiri, agar tetap tunduk."
     narator "[mc_name] melaporkan hasil temuan ke Raden Bagus."
-    narator "Alih-alih marah, ia malah menaikkan jabatan [mc_name] menjadi Pengawas Pusat TAXNET."
+    scene black
+    centered "Alih-alih marah, ia malah menaikkan jabatan [mc_name] menjadi Pengawas Pusat TAXNET."
 
     raden "Sistem ini bukan untuk dipahami, tapi dijaga. Sekarang, kamu bagian dari penjaganya."
 
