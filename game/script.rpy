@@ -27,12 +27,12 @@ image lead ngobrol made = ConditionSwitch(
 
 #dialog 1 (tolak bantu)
 #scene 1
-image made kecewa = "Dialog/Dialog 1 (tolak membantu)/Scene 1/1. Made kecewa.png"
+image made kecewa = "Dialog/Dialog 1 (tolak membantu)/Scene 1/1. Made kecewa (2).png"
 image lead diem = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 1/2. MC (m)_.png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 1/2. MC (f) .png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 1/2._MC__m__-removebg-preview.png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 1/2._MC__f__-removebg-preview.png",
 )
-image raden bangga = "Dialog/Dialog 1 (tolak membantu)/Scene 1/3. Raden bangga.png"
+image raden bangga = "Dialog/Dialog 1 (tolak membantu)/Scene 1/3._Raden_bangga-removebg-preview.png"
 
 #scene 2 latar berubah
 image lead taxnet = ConditionSwitch(
