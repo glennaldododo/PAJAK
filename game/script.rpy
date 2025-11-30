@@ -971,11 +971,14 @@ label ragu_made:
 
     raden "Sistem ini bukan untuk dipahami, tapi dijaga. Sekarang, kamu bagian dari penjaganya."
 
+    scene ruang baru
+    show lead kaget at left
     narator "Di ruangan baru, layar hologram menampilkan peta nasional dengan jutaan titik merah. Namun saat [mc_name] membuka access root, muncul pesan terenkripsi:"
     narator "\"Selamat datang di Lapisan Inti, [mc_name]. Kau tak seharusnya disini.\""
     narator "[mc_name] menemukan bahwa TAXNET bukan hanya sistem pajak, tapi alat seleksi populasi."
     narator "Eksekusi bukan karena gagal bayar pajak - tapi hasil simulasi algoritma tentang \"siapa yang paling berguna bagi negara\"."
     
+    show raras bingung at right with moveinright
     raras "Berarti kita cuma angka di layar?"
 
     mc "Maksudnya… eksekusi yang terjadi di negara ini jatuh dibawah tangan gue?!?"
@@ -1000,14 +1003,22 @@ label pilihan_sistem:
 
 #MEMATIKAN SISTEM
 label mati_sistem:
+    scene ruang baru
+    show lead at left
+    show raras bingung at right
     narator "[mc_name] menarik napas panjang, menatap layar berkedip di depannya. Suara detik jam terakhir bergema di kepalanya. Ia menekan tombol \"SHUTDOWN\"."
-    narator "\"Konfirmasi: Penghentian Sistem Pajak Nasional. Semua Data Warga Akan Terhapus.\""
+    
+    scene black
+    centered "\"Konfirmasi: Penghentian Sistem Pajak Nasional. Semua Data Warga Akan Terhapus.\""
     #Cahaya menyala menyilaukan. Mesin berhenti berdengung. Dunia terdiam
+    scene dunia damai
     narator "Tanpa TAXNET, segala kontrol lenyap. Pajak berhenti. Pemerintah kehilangan pengawasan, pasar anjlok, mata uang tak punya nilai."
     narator "Orang-orang berebut makanan di jalanan, kantor-kantor tutup, dan kota jatuh ke anarki."
+    scene kota chaos
     narator "Namun... di antara reruntuhan itu, untuk pertama kalinya dalam puluhan tahun - manusia benar-benar bebas. Bebas memilih, bebas salah, bebas hidup tanpa angka."
     narator "Di langit, senja merah membakar horizon. Tak ada sistem yang tersisa."
     narator "Hanya [mc_name] - dan keheningan yang ia ciptakan."
+    scene komputer runtuh
     narator "Namun di suatu tempat, jauh di bawah reruntuhan server pusat - sebuah lampu kecil berkedip. Layar hitam menampilkan satu baris teks yang muncul perlahan, nyaris seperti napas:"
     narator "\"ANOMALY DETECTED\""
     narator "\"CORE PROCESS: REBOOTING...\""
@@ -1021,14 +1032,16 @@ label ending_itsover:
     scene black
     with fade
 
-    narator "ENDING: It's Over, Isn't It?"
-    narator "Suara lembut yang familiar berbisik di kegelapan:"
-    narator "Sistem... tidak pernah benar-benar mati."
+    centered "ENDING: It's Over, Isn't It?"
+    centered "Suara lembut yang familiar berbisik di kegelapan:"
+    centered "Sistem... tidak pernah benar-benar mati."
 
     return
 
 #MENGAMBIL ALIH TAXNET
 label alih_taxnet:
+    scene bola cahaya 1
+    show lead diem at center
     narator "[mc_name] menatap inti TAXNET yang berputar - bola cahaya data seukuran planet mini. Di dalamnya, wajah Raden muncul samar."
     
     raden "Jadi, akhirnya kau temui juga kebenaran dari sistem yang kubuat ini. Kau bisa menghentikanku. Atau... menggantikanku."
@@ -1047,7 +1060,9 @@ label ending_inherit:
     scene black
     with fade
 
-    narator "ENDING: For I Shall Inherit The Throne"
+    centered "ENDING: For I Shall Inherit The Throne"
+    
+    scene suasana ganti kekuasaan
     narator "Beberapa bulan kemudian, dunia stabil. Tak ada lagi korupsi, tak ada penipuan. Tapi juga... tak ada belas kasihan."
     narator "[mc_name] memerintah dari menara kaca pusat, wajahnya terpampang di layar-layar kota: \"The Director.\""
     narator "Ia menggantikan Tuhan dengan algoritma."
@@ -1056,12 +1071,16 @@ label ending_inherit:
 
 #MEMBIARKAN BERJALAN
 label biar_berjalan:
+    scene laptop sunyi
+    show lead diem at center
     narator "[mc_name] berdiri diam. Tangannya gemetar di atas tombol. Cahaya terminal berdenyut pelan - seolah menunggu."
     narator "Ia menatap grafik di layar: angka ekonomi naik stabil, kejahatan menurun, eksekusi berjalan teratur. Dunia tampak damai."
     narator "Namun di balik itu, ia tahu: sistem ini menelan ribuan orang setiap bulan."
     narator "Raras salah satunya. Made lainnya."
     narator "[mc_name] menurunkan tangannya. Sistem tetap menyala. Hujan cahaya data kembali mengalir, menenggelamkan ruang dalam warna biru dingin."
-    narator "Keesokan paginya, ia kembali ke kantor seperti biasa. Raden tersenyum di layar, memuji \"dedikasi dan stabilitasnya.\""
+    
+    scene black
+    centered "Keesokan paginya, ia kembali ke kantor seperti biasa. Raden tersenyum di layar, memuji \"dedikasi dan stabilitasnya.\""
     narator "Rekan-rekan menyapa, semua berjalan normal."
     narator "Namun setiap kali jam berdetak, suaranya berubah - bukan detik jam, tapi hitungan nyawa yang lenyap dari sistem."
 
@@ -1072,7 +1091,9 @@ label ending_frozen:
     scene black
     with fade
 
-    narator "ENDING: By Your Frozen Hands"
+    centered "ENDING: By Your Frozen Hands"
+    scene suasana malam
+    show lead gantiin Tuhan at center
     narator "Di malam hari, [mc_name] duduk sendirian di depan layar. Tatapan kosong, wajahnya diterangi cahaya angka-angka yang terus berputar."
     narator "Dunia aman. Tapi batinnya... tidak pernah tidur lagi."
 
