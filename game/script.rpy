@@ -314,21 +314,23 @@ label start:
         "Pilih gender"
         "Laki-laki" :  
             $ gender = "m"
-            show lead netral with dissolve
+            show lead netral with Dissolve(2.0)
             jump prolog_0
         "Perempuan" :
             $ gender = "f"
-            show lead netral with dissolve
+            show lead netral with Dissolve(2.0)
             jump prolog_0
 
 #ADEGAN 0 PROLOG - RUANG KERJA {NAMA PEMAIN}
 label prolog_0:
     hide lead netral with dissolve
     centered "Cerita dimulai..." with Dissolve(2.0)
-    
+
     scene bg prolog_0 with fade
+    play sound clock_ticking
     narator "Suara detik jam bergema di ruang kerja yang sepi. Di layar komputer, angka dan grafik berjajar seperti tentara menunggu perintah."
-    
+
+    play ambience office volume 0.75
     show lead netral at center with easeinbottom
     narator "Duduklah seorang pegawai muda Pajak yang baru bekerja 3 bulan yang kerap disapa dengan [mc_name]."
     narator "Dirinya terlahir dari keluarga ningrat yang idealis dan berintegritas untuk membangun negeri."
@@ -338,8 +340,9 @@ label prolog_0:
 
     # (Suara notifikasi masuk di komputer {nama pemain}. --> sound
     scene black with dissolve
+    play sound iphone_notif
     centered "\"Tugas Audit Baru: PT Cahaya Purnama Bakti — Penanggung Jawab: [mc_name].\"" with Dissolve(0.5)
-
+    play sound office volume 0.75
     scene bg prolog_0 with dissolve
     show lead liat made at center with dissolve
     narator "[mc_name] menatap layar dengan alis berkerut."
