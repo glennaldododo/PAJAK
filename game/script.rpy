@@ -11,7 +11,7 @@ image lead liat made = ConditionSwitch(
 )
 
 #adegan 1
-image raras wah = "Prolog/Prolog/Adegan 1/1. Raras, saat _wahh.._.png"
+image raras wah = "Prolog/Prolog/Adegan 1/1. Raras, saat _wahh_.png"
 image lead ehh = ConditionSwitch(
     "gender == 'm'", "Prolog/Prolog/Adegan 1/2. MC (m) saat _Ehh iya_.png",
     "gender == 'f'", "Prolog/Prolog/Adegan 1/2. MC (f) saat _Ehh iya_.png",
@@ -136,7 +136,7 @@ image raden kesal = "Dialog/Dialog 2 (setuju membantu)/scene 3 (mengaku dan memb
 
 #scene 3 nutupi bukti
 #raden bangga ada di sblmnya
-image raras masih ingat = "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/2. Raras _kamu masih ingat.._.png"
+image raras masih ingat = "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/2. Raras _kamu masih ingat_.png"
 image lead bingung = ConditionSwitch(
     "gender == 'm'", "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/MC (m).png",
     "gender == 'f'", "Dialog/Dialog 2 (setuju membantu)/scene 3 (menutupi bukti)/MC (f).png",
@@ -159,11 +159,11 @@ image lead madenya sedikit lega = ConditionSwitch(
 #scene 3 ruangan baru
 image lead kaget = ConditionSwitch(
     "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (m) _selamat datang_.png",
-    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (f) _selamat datang.._.png",
+    "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/1. MC (f) _selamat datang_.png",
 )
 image raras bingung = "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/2. Raras.png"
 image lead maksudnya = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (m) _Maksudnya.._.png",
+    "gender == 'm'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (m) _Maksudnya_.png",
     "gender == 'f'", "Dialog/Dialog 3 (Ragu-ragu membantu made)/scene 3 ruangan baru/3. MC (f) _Maksudnya.png",
 )
 
