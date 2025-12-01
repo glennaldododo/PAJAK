@@ -344,68 +344,74 @@ style navigation_button_text:
     properties gui.text_properties("navigation_button")
 
 
-## Main Menu screen ############################################################
-##
-## Used to display the main menu when Ren'Py starts.
-##
-## https://www.renpy.org/doc/html/screen_special.html#main-menu
-
 screen main_menu():
 
-    ## This ensures that any other menu screen is replaced.
     tag menu
 
+    ## Background
     add "gui/homescreen.jpg"
 
-    ## This empty frame darkens the main menu.
     frame:
-        style "main_menu_frame"
+        ## POSISI (TURUN KE BAWAH)
+        ## Saya ubah jadi 0.8 supaya turun dan tidak menutupi "TAXNET"
+        xalign 0.5
+        yalign 0.8 
 
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
-
-    if gui.show_name:
+        background Solid("#00000099")
+        padding (40, 30)
 
         vbox:
-            style "main_menu_vbox"
+            xalign 0.5
+            spacing 10 # Jarak antar tombol dirapatkan biar kotak tidak kepanjangan
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            ## TOMBOL START (Dikecilkan)
+            textbutton "START OPERATION":
+                action Start()
+                xalign 0.5
+                text_size 50  # Dikecilkan dari 70 ke 50
+                text_color "#00eaff"
+                text_hover_color "#ffffff"
+                text_outlines [(1, "#005555", 0, 0)]
 
-            text "[config.version]":
-                style "main_menu_version"
+            ## TOMBOL LOAD (Dikecilkan)
+            textbutton "LOAD DATA":
+                action ShowMenu("load")
+                xalign 0.5
+                text_size 30  # Dikecilkan dari 40 ke 30
+                text_color "#88f0ff"
+                text_hover_color "#ffffff"
 
+            ## TOMBOL CONFIG (Dikecilkan)
+            textbutton "SYSTEM CONFIG":
+                action ShowMenu("preferences")
+                xalign 0.5
+                text_size 30  # Dikecilkan dari 40 ke 30
+                text_color "#88f0ff"
+                text_hover_color "#ffffff"
 
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
+            ## TOMBOL ABOUT (Dikecilkan)
+            textbutton "ABOUT":
+                action ShowMenu("about")
+                xalign 0.5
+                text_size 30  # Dikecilkan dari 40 ke 30
+                text_color "#88f0ff"
+                text_hover_color "#ffffff"
 
-style main_menu_frame:
-    xsize 420
-    yfill True
+            ## TOMBOL HELP (Dikecilkan)
+            textbutton "HELP":
+                action ShowMenu("help")
+                xalign 0.5
+                text_size 30  # Dikecilkan dari 40 ke 30
+                text_color "#88f0ff"
+                text_hover_color "#ffffff"
 
-    background "gui/overlay/main_menu.png"
-
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
-
-
+            ## TOMBOL EXIT (Dikecilkan)
+            textbutton "EXIT GAME":
+                action Quit(confirm=not main_menu)
+                xalign 0.5
+                text_size 30  # Dikecilkan dari 40 ke 30
+                text_color "#ff4d4d"
+                text_hover_color "#ff0000"
 ## Game Menu screen ############################################################
 ##
 ## This lays out the basic common structure of a game menu screen. It's called
