@@ -650,7 +650,7 @@ label alasan_tidak_jujur:
     
     narator "Raden tersenyum kecil."
 
-    show raden senyum tipis with dissolve
+    show raden jangan bodoh
     raden "Kau pikir dunia ini bisa stabil tanpa pengorbanan? Sistem ini diciptakan bukan untuk adil, tapi untuk efisien."
 
     narator "[mc_name] menatap layar, menekan satu perintah lagi."
@@ -659,9 +659,9 @@ label alasan_tidak_jujur:
     show raden jangan bodoh with vpunch
     raden "Jangan bodoh! Itu akan menimbulkan kekacauan!"
 
-    mc "Lebih baik kacu... daripada salah tetap tersembunyi"
+    mc "Lebih baik kacau... daripada salah tetap tersembunyi"
 
-    narator "📢 Upload initiated: 5%... 20%... 60%..."
+    narator "📢 Upload initiated: 5... 20... 60..."
     narator "Raden menarik pistol keamanan dari sakunya, menodongkan ke arah [mc_name]."
     
     show raden keluarin pistol with easeinright
@@ -672,8 +672,8 @@ label alasan_tidak_jujur:
     show lead berhasil upload at left with dissolve
     mc "Sudah berakhir, Pak. Dari awal saat saya menyelamatkan Raras, saya tahu saya nggak bisa kembali lagi."  
     
-    scene black with white
-    centered "📢 Upload complete: 100%"
+    scene black
+    centered "📢 Upload complete: 100"
 
     scene ruang rapat kembali pulih with fade
     narator "Layar terminal berubah menjadi putih. Semua data, semua manipulasi, semua korban Human Filter Protocol kini tersebar ke publik."
