@@ -340,7 +340,7 @@ label prolog_0:
 
     # (Suara notifikasi masuk di komputer {nama pemain}. --> sound
     scene black with dissolve
-    play sound iphone_notif
+    play sound win11_notif
     centered "\"Tugas Audit Baru: PT Cahaya Purnama Bakti — Penanggung Jawab: [mc_name].\"" with Dissolve(0.5)
     play sound office volume 0.75
     scene bg prolog_0 with dissolve
@@ -358,7 +358,8 @@ label prolog_0:
 #ADEGAN 1 PROLOG - KANTOR PAJAK, PAGI HARI
 label prolog_1:
     scene bg prolog_1 with fade
-    # (Suara keyboard dan notifikasi sistem) --> sound
+    play audio win11_notif
+    play audio typing 
     show raras wah at right with easeinright
     raras "Pagi, wah kelihatannya kamu seneng banget, dapet tugas audit pertama nih, iya gak [mc_name]?"
     
@@ -373,6 +374,8 @@ label prolog_1:
 
 #ADEGAN 2 PROLOG - RUANG RAPAT
 label prolog_2:
+    play audio small_audience
+    play audio footsteps
     scene black with dissolve
     centered "Tiba di ruang rapat dengan peralatan serba digital. [mc_name] melangkah masuk dengan map di tangan, mengenakan tanda pengenal resmi pegawai pajak." with Dissolve(0.5)
     centered "Di ruang rapat, Made Arya Wiradipa menunggunya dengan senyum lebar." with Dissolve(0.5)
@@ -403,6 +406,7 @@ label prolog_2:
     jump pilihan_mc
 
 #MEMILIH 3 PILIHAN MC
+play audio muncul3_pilihan
 label pilihan_mc:
     menu:
         "Bantu Made dengan senang hati": 
@@ -493,7 +497,9 @@ label pilihan_selamatkan_raras:
 #PILIHAN SELAMATKAN RARAS
 label selamatkan_raras:
     scene black
+    play audio fan_sound
     centered "Lampu berkedip. Jari [mc_name] menekan perintah \"DELETE LOG\"." with Dissolve(0.5)
+    play audio mouse_click
     centered "Sistem berhenti beberapa detik, lalu menampilkan pesan:" with Dissolve(0.5)
     centered "✅ Data Alomani Dihapus. Counter Raras Wulandari: 0." with Dissolve(0.5)
     centered "Raras selamat." with Dissolve(0.5)
@@ -515,6 +521,7 @@ label selamatkan_raras:
     scene ruang rapat with fade
     show raden memanggil at right with easeinright
     show lead menghadap raden at left with easeinleft
+    play audio the_dark_night
     raden "Ada satu anomali di data Wilayah Timur."
     raden "Seseorang menghapus log tanpa izin."
 
@@ -563,7 +570,8 @@ label alasan_jujur:
     mc "Saya... mengerti, Pak."
 
     raden "Keluar lewat pintu belakang. Aku akan hapus log terakhirmu... satu kali lagi."
-
+    play audio footsteps
+    play audio park_sound
     scene black with fade
     centered "[mc_name] menatap Raden dengan tatapan kosong." with Dissolve(0.5)
     centered "Ia meninggalkan kantor dengan langkah pelan."with Dissolve(0.5)
@@ -602,7 +610,7 @@ label alasan_tidak_jujur:
     raden "Sistem sempurna ini, yang saya telah jaga selama bertahun-tahun, tidak mungkin bisa memiliki error!"
 
     mc "Justru karena itu saya ingin tahu."
-
+    play audio alarm_sound volume 0.5
     scene black with dissolve
     centered "Suara sistem menyela percakapan."
     centered "📢 ALERT: Unauthorized Access Detected - User: [mc_name]." with vpunch
@@ -625,6 +633,7 @@ label alasan_tidak_jujur:
     centered "[mc_name] menemukan perintah baru tersembunyi di log administrator."
     #Latar: Server Room TAXNET, larut malam. Hanya lampu merah darurat yang menyala. Suara mesin berdengung berat.
     centered "Jari-jarinya bergetar saat menekan perintah tersembunyi:"
+    play audio mouse_click
     centered "> EXECUTE: SEARCH_OVERSIGHT_PROTOCOL -admin=true"
     centered "Layar bergetar. Suara sistem berbisik, seolah-olah sadar akan perintah itu."
     centered "📢 Warning: You are accessing restricted layers. Oversight Level 0 detected."
@@ -654,13 +663,14 @@ label alasan_tidak_jujur:
     raden "Kau pikir dunia ini bisa stabil tanpa pengorbanan? Sistem ini diciptakan bukan untuk adil, tapi untuk efisien."
 
     narator "[mc_name] menatap layar, menekan satu perintah lagi."
+    play audio typing
     narator "> UPLOAD_ALL_TO_PUBLIC_NODE"
     
     show raden jangan bodoh with vpunch
     raden "Jangan bodoh! Itu akan menimbulkan kekacauan!"
 
     mc "Lebih baik kacau... daripada salah tetap tersembunyi"
-
+    play audio the_dark_night
     narator "📢 Upload initiated: 5... 20... 60..."
     narator "Raden menarik pistol keamanan dari sakunya, menodongkan ke arah [mc_name]."
     
@@ -707,7 +717,8 @@ label tidak_selamatkan_raras:
     scene ruang kerja lama with fade
     show lead senyum bahagia at center with dissolve
     narator "[mc_name] duduk diam. Ia memilih menutup semua jendela sistem, membiarkan mekanisme berjalan seperti biasa."
-    
+    play audio clock_ticking
+
     scene black with dissolve
     centered "Esoknya, sebuah pesan sistem muncul:"
     centered "🔔 Eksekusi Digital: Raras Wulandari - Completed."
@@ -731,6 +742,8 @@ label tidak_selamatkan_raras:
     centered "📢 WULANDARI_RARAS.LOG - \"Final Transmission Incomplete.\""
     centered "Setiap kali sistem memproses data baru, notifikasi itu muncul lagi. Seolah sistem mengingatkan bahwa ada sesuatu yang hilang — atau seseorang."
     centered "Raden Bagus masuk ke ruangan."
+
+    play audio fan_sound
 
     scene ruang kerja lama with dissolve
     show raden bangga at right with easeinright
@@ -756,6 +769,7 @@ label tidak_selamatkan_raras:
     narator "Satu fitur baru muncul - fitur yang dulu mematikan Raras:"
     narator "🔔AUTO-FILTER HUMAN ERROR v2.1"
     narator "Tapi kali ini, di sudut layar, ada catatan kecil otomatis: \"Didedikasikan untuk R.W.\""
+    play audio win11_notif
     narator "[mc_name] terpaku. Tak ada orang yang menulis catatan itu."
     narator "Mungkin bug. Mungkin pesan. Atau mungkin, sistem juga punya kenangan."
     #Layar redup, kamera mendekat ke wajah mc
@@ -783,6 +797,7 @@ label bantu_made:
     narator "[mc_name] tahu ini salah, tapi kata-katanya menenangkan. [mc_name] mulai menyesuaikan angka laporan. Satu perubahan kecil. Tidak akan ada yang tahu, pikirnya."
     
     scene black with fade
+    play audio sound_effect_dmv
     centered "Audit selesai. PT Cahaya Purnama Bakti dinyatakan \"aman\""
     centered "Beberapa hari kemudian, [mc_name] menerima pesan dari Made - \"Makasih, bro. Lu bakal naik cepat.\""
     centered "Dan benar saja, Raden Bagus memanggil [mc_name] masuk ke ruangannya."
@@ -790,6 +805,7 @@ label bantu_made:
     scene ruang rapat with fade
     show raden bangga at right with easeinright
     show lead menghadap raden at left with easeinleft
+    play audio pat_on_backshoulder
     raden "Kamu efisien. Data rapi, cepat, tanpa noise. Sistem butuh orang seperti kamu."
 
     scene black with dissolve
@@ -807,6 +823,7 @@ label bantu_made:
     centered "Suatu hari, [mc_name] menerima laporan eksekusi massal - 1.200 warga Zona Selatan terhapus dari sistem."
     centered "Penyebabnya? Koreksi data audit Made Arya Wiradipa."
     centered "Ternyata, perbaikan kecil [mc_name] dulu membuat hutang Made dialihkan ke ribuan nama orang miskin."
+    play audio iphone_notif
     centered "Raras menemukan bukti dan menghadapkannya kepada [mc_name]."
 
     scene cafe raras with dissolve
@@ -835,6 +852,7 @@ label menutupi_bukti:
     scene ruang kerja mc suram with fade
     show lead bingung at left with dissolve
     narator "[mc_name] menatap layar terminal. Data kejahatan sistem sudah terbuka lebar. Cukup satu sentuhan untuk menghapus semuanya - seolah tak pernah terjadi"
+    play audio mouse_click
     narator "Tangannya bergetar, tapi ia menekan tombol \"HAPUS LOG\"."
     narator "Layar redup. Cahaya ruangan kembali biru tenang."
     
@@ -843,6 +861,7 @@ label menutupi_bukti:
 
     scene black with fade
     centered "[mc_name] dipromosikan. Dunia tetap berjalan. Raras, Made, dan jutaan nama yang lenyap dari sistem tak pernah disebut lagi."
+    play audio small_audience
     centered "Setiap pagi [mc_name] datang ke kantor, mendengar detik jam, dan meyakinkan diri: \"Aku hanya menjalankan tugas.\""
     centered "Namun setiap malam, [mc_name] melihat pantulan wajahnya di kaca - kosong, seperti layar TAXNET yang sudah bersih."
     centered "Beberapa bulan setelah promosi besar itu, kehidupan [mc_name] terlihat sempurna."
@@ -856,6 +875,7 @@ label menutupi_bukti:
     scene ruang kerja baru mc suram with dissolve
     show lead bingung at center with dissolve
     narator "[mc_name] terdiam di depan layar, mencoba mencari sumber suara itu. Tapi yang muncul hanyalah baris kode dengan pesan aneh:"
+    play audio binary_code
     
     scene black with dissolve
     centered "echo://Raras_Wulandari//active.memory/log142"
@@ -902,6 +922,7 @@ label menutupi_bukti:
     raden "Tugas selesai. Simulasi kesadaran #142 mencapai stabilitas penuh. Subjek siap untuk terminasi."
 
     centered "Sekejap kemudian, layar memudar. Detak jantung buatan di ruang server berhenti. Satu file terakhir tersimpan otomatis:"
+    play audio binary_code
     centered "FinalLog142: Operator dinyatakan bersih dari keraguan moral."
     
     jump ending_verdict
@@ -920,11 +941,14 @@ label bocor_data:
     scene alarm bunyi with hpunch
     show lead senyum kesal at center with dissolve
     narator "[mc_name] menyalakan koneksi eksternal rahasia - jalur data bawah tanah yang pernah diperlihatkan Raras."
+    play audio mouse_click
+    play audio typing 
     narator "Ia memindahkan seluruh arsip ke jaringan publik."
     
     scene kondisi hancur with vpunch
     narator "Dalam 10 detik, kebusukan TAXNET tersebar ke seluruh layar masyarakat."
     #Suara alarm global berbunyi. Raden berteriak di layar komunikasi
+    play audio alarm_sound
     show raden kesal at right with dissolve
     show lead senyum kesal at left with dissolve
     raden "Apa yang kau lakukan!? Dunia akan kacau!"
@@ -937,6 +961,7 @@ label bocor_data:
 label ending_shadow:
     scene black with fade
     centered "Sistem pusat menandainya sebagai pengkhianat negara. Wajahnya tersebar di setiap papan digital, label merah besar:"
+    play audio binary_code
     centered "DISRUPTIVE ENTITY - PRIORITY ELIMINATION."
     centered "Raras hilang tanpa kabar. Made diburu karena koneksinya dengannya."
     jump game_over_menu
@@ -954,6 +979,9 @@ label hancur_taxnet:
     raras "[mc_name]... jangan. Kalau sistem hancur, semua catatan manusia juga akan hilang."
 
     mc "Mungkin itu yang seharusnya. Dunia harus mulai dari nol."
+    play audio mouse_click
+    play audio typing
+    play audio binary_code
 
     scene kondisi dunia riset with vpunch
     narator "\"WARNING: CORE DELETION CONFIRMED. ALL ENTITY DATA WILL BE PURGED.\""
@@ -964,6 +992,7 @@ label hancur_taxnet:
 label ending_ashes:
     scene black with white
     centered "Cahaya meledak seperti siang yang tak berujung. Seluruh kota kehilangan sinyal, layar-layar mati, dan suara mesin berhenti."
+    play audio turns_off_TV
     
     scene kondisi internet padam with fade
     narator "Beberapa hari kemudian, dunia terbangun tanpa TAXNET. Tak ada data. Tak ada kontrol. Tak ada [mc_name]."
@@ -987,14 +1016,17 @@ label ragu_made:
     centered "Alih-alih marah, ia malah menaikkan jabatan [mc_name] menjadi Pengawas Pusat TAXNET."
 
     raden "Sistem ini bukan untuk dipahami, tapi dijaga. Sekarang, kamu bagian dari penjaganya."
+    play audio typing
+    play audio mouse_click
 
     scene ruang baru with fade
     show lead kaget at left with easeinleft
     narator "Di ruangan baru, layar hologram menampilkan peta nasional dengan jutaan titik merah. Namun saat [mc_name] membuka access root, muncul pesan terenkripsi:"
+    play audio fan_sound
     narator "\"Selamat datang di Lapisan Inti, [mc_name]. Kau tak seharusnya disini.\""
     narator "[mc_name] menemukan bahwa TAXNET bukan hanya sistem pajak, tapi alat seleksi populasi."
     narator "Eksekusi bukan karena gagal bayar pajak - tapi hasil simulasi algoritma tentang \"siapa yang paling berguna bagi negara\"."
-    
+    play audio footsteps
     show raras bingung at right with moveinright
     raras "Berarti kita cuma angka di layar?"
 
@@ -1023,9 +1055,12 @@ label mati_sistem:
     scene ruang baru with dissolve
     show lead at left with dissolve
     show raras bingung at right with dissolve
+    play audio breathing_sound
     narator "[mc_name] menarik napas panjang, menatap layar berkedip di depannya. Suara detik jam terakhir bergema di kepalanya. Ia menekan tombol \"SHUTDOWN\"."
-    
+    play audio fan_sound
+
     scene black with vpunch
+    play audio binary_code
     centered "\"Konfirmasi: Penghentian Sistem Pajak Nasional. Semua Data Warga Akan Terhapus.\""
     #Cahaya menyala menyilaukan. Mesin berhenti berdengung. Dunia terdiam
     
@@ -1040,6 +1075,7 @@ label mati_sistem:
     
     scene komputer runtuh with fade
     narator "Namun di suatu tempat, jauh di bawah reruntuhan server pusat - sebuah lampu kecil berkedip. Layar hitam menampilkan satu baris teks yang muncul perlahan, nyaris seperti napas:"
+    play audio binary_code
     narator "\"ANOMALY DETECTED\""
     narator "\"CORE PROCESS: REBOOTING...\""
     narator "\"USER: UNKNOWN\""
@@ -1051,6 +1087,7 @@ label mati_sistem:
 label ending_itsover:
     scene black with fade
     centered "ENDING: It's Over, Isn't It?"
+    play audio mouse_click
     centered "Suara lembut yang familiar berbisik di kegelapan:"
     centered "Sistem... tidak pernah benar-benar mati."
     jump game_over_menu
@@ -1059,13 +1096,19 @@ label ending_itsover:
 label alih_taxnet:
     scene bola cahaya 1 with fade
     show lead diem at center with dissolve
+    play audio breathing_sound
+    play audio clock_ticking
     narator "[mc_name] menatap inti TAXNET yang berputar - bola cahaya data seukuran planet mini. Di dalamnya, wajah Raden muncul samar."
     
     raden "Jadi, akhirnya kau temui juga kebenaran dari sistem yang kubuat ini. Kau bisa menghentikanku. Atau... menggantikanku."
     raden "Kedua jalan yang kau pilih akan membawa konsekuensi besar, [mc_name]..."
 
+    play audio typing 
+    play audio mouse_click
     narator "[mc_name] mendekat. Tangannya menempel ke konsol. Sistem mengenali identitasnya."
     narator "\"Administrator Override: Approved.\""
+    play audio win11_notif
+    play audio binary_code
     narator "Cahaya membanjiri ruangan. Suara jutaan Counter muncul di layar - hijau, merah, kuning. Setiap nama, setiap nyawa... kini ada di bawah kendalinya."
     narator "Satu demi satu, layar menampilkan wajah-wajah manusia: pekerja, pejabat, anak kecil, pengusaha."
     narator "Sekarang, hanya satu pikiran yang bisa menentukan siapa layak hidup."
@@ -1087,14 +1130,20 @@ label ending_inherit:
 label biar_berjalan:
     scene laptop sunyi with fade
     show lead diem at center with dissolve
+    play audio breathing_sound
     narator "[mc_name] berdiri diam. Tangannya gemetar di atas tombol. Cahaya terminal berdenyut pelan - seolah menunggu."
+    play audio mouse_click
+    play audio binary_code
     narator "Ia menatap grafik di layar: angka ekonomi naik stabil, kejahatan menurun, eksekusi berjalan teratur. Dunia tampak damai."
+    play audio clock_ticking
     narator "Namun di balik itu, ia tahu: sistem ini menelan ribuan orang setiap bulan."
     narator "Raras salah satunya. Made lainnya."
     narator "[mc_name] menurunkan tangannya. Sistem tetap menyala. Hujan cahaya data kembali mengalir, menenggelamkan ruang dalam warna biru dingin."
     
     scene black with dissolve
+    play audio footsteps
     centered "Keesokan paginya, ia kembali ke kantor seperti biasa. Raden tersenyum di layar, memuji \"dedikasi dan stabilitasnya.\""
+    play audio typing
     narator "Rekan-rekan menyapa, semua berjalan normal."
     narator "Namun setiap kali jam berdetak, suaranya berubah - bukan detik jam, tapi hitungan nyawa yang lenyap dari sistem."
 
