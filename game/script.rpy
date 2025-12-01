@@ -314,11 +314,11 @@ label start:
         "Pilih gender"
         "Laki-laki" :  
             $ gender = "m"
-            show lead netral with dissolve
+            show lead netral with Dissolve(2.0)
             jump prolog_0
         "Perempuan" :
             $ gender = "f"
-            show lead netral with dissolve
+            show lead netral with Dissolve(2.0)
             jump prolog_0
 
 #ADEGAN 0 PROLOG - RUANG KERJA {NAMA PEMAIN}
