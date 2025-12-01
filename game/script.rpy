@@ -103,12 +103,12 @@ image raras baca berita = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatk
 #scene 3 tidak nyelamatin
 #image raden bangga ada di sblmnya
 image lead senyum bahagia = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (m).png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (f).png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (m).png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (f).png",
 )
 image lead kantor baru = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
 )
 
 
@@ -248,7 +248,7 @@ image ruang baru = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/ruangan baru.
 
 #A
 image dunia damai = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)/Dunia damai walaupun chaos.png"
-image komputer runtuh = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)"
+image komputer runtuh = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)/komputer di reruntuhan.png"
 image kota chaos = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/A (MEMATIKAN SISTEM)/Kondisi kota yang chaos.png"
 
 
@@ -983,14 +983,14 @@ label hancur_taxnet:
     play audio typing
     play audio binary_code
 
-    scene kondisi dunia riset with vpunch
+    scene kondisi dunia reset with vpunch
     narator "\"WARNING: CORE DELETION CONFIRMED. ALL ENTITY DATA WILL BE PURGED.\""
     
     jump ending_ashes
 
 #ENDING FROM YOUR ASHES, THE WORLD WILL RISE AGAIN
 label ending_ashes:
-    scene black with white
+    scene black
     centered "Cahaya meledak seperti siang yang tak berujung. Seluruh kota kehilangan sinyal, layar-layar mati, dan suara mesin berhenti."
     play audio turns_off_TV
     
@@ -1003,7 +1003,7 @@ label ending_ashes:
 label ragu_made:
     scene bg prolog_2 with dissolve
     show made sedikit lega at right with dissolve
-    show lead madenya sedikit lega with dissolve
+    show lead madenya sedikit lega at left with dissolve
     made "Oke, lu lihat aja dulu. Gue yakin lu bakal ngerti kenapa gue kayak gini."
 
     scene ruang kerja malam with fade
@@ -1053,7 +1053,7 @@ label pilihan_sistem:
 #MEMATIKAN SISTEM
 label mati_sistem:
     scene ruang baru with dissolve
-    show lead at left with dissolve
+    show lead netral at left with dissolve
     show raras bingung at right with dissolve
     play audio breathing_sound
     narator "[mc_name] menarik napas panjang, menatap layar berkedip di depannya. Suara detik jam terakhir bergema di kepalanya. Ia menekan tombol \"SHUTDOWN\"."
