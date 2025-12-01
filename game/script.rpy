@@ -103,12 +103,12 @@ image raras baca berita = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatk
 #scene 3 tidak nyelamatin
 #image raden bangga ada di sblmnya
 image lead senyum bahagia = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (m).png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (f).png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (m).png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (f).png",
 )
 image lead kantor baru = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
 )
 
 
@@ -330,7 +330,7 @@ label prolog_0:
     play sound clock_ticking
     narator "Suara detik jam bergema di ruang kerja yang sepi. Di layar komputer, angka dan grafik berjajar seperti tentara menunggu perintah."
 
-    play ambience office volume 0.75
+    play sound office volume 0.75
     show lead netral at center with easeinbottom
     narator "Duduklah seorang pegawai muda Pajak yang baru bekerja 3 bulan yang kerap disapa dengan [mc_name]."
     narator "Dirinya terlahir dari keluarga ningrat yang idealis dan berintegritas untuk membangun negeri."
@@ -586,7 +586,7 @@ label ending_honesty:
     scene black with fade
     centered "ENDING: In Honesty, Lies Clarity"
     centered "Dalam dunia yang menghapus kesalahan dengan satu klik, [mc_name] memilih untuk tetap salah demi menjadi manusia."
-    return
+    jump game_over_menu
 
 #PILIHAN TIDAK JUJUR PADA RADEN
 label alasan_tidak_jujur:
@@ -699,7 +699,7 @@ label epilog:
     centered "📢 USER LOGOUT - OVERSIGHT PROTOCOL TERMINATED."
     centered "SECRET ENDING: Veni, Vidi, Vici"
     centered "Kebenaran selalu punya harga. Terkadang, nyawa adalah bayarannya."
-    return
+    jump game_over_menu
 
 #PILIHAN TIDAK SELAMATKAN RARAS
 label tidak_selamatkan_raras:
@@ -770,7 +770,7 @@ label ending_stillness:
     scene black with fade
     centered "ENDING: Stillness Brings Cruelty"
     centered "Terkadang, menjaga sistem berarti kehilangan sisi manusia dan dalam dunia yang diawasi angka, yang beku bukan hanya data - tapi hati mereka yang memilih diam."
-    return
+    jump game_over_menu
 
 #PILIHAN BANTU MADE
 label bantu_made:
@@ -913,7 +913,7 @@ label ending_verdict:
     centered "Dan di dunia nyata - di sebuah ruangan laboratorium sunyi - lampu kapsul nomor 142 padam."
     centered "Sebuah label kecil menempel di kaca:"
     centered "Nama: [mc_name]. Status: Meninggal dunia."
-    return
+    jump game_over_menu
 
 #PILIHAN MENGAKU DAN MEMBOCORKAN DATA
 label bocor_data:
@@ -939,7 +939,7 @@ label ending_shadow:
     centered "Sistem pusat menandainya sebagai pengkhianat negara. Wajahnya tersebar di setiap papan digital, label merah besar:"
     centered "DISRUPTIVE ENTITY - PRIORITY ELIMINATION."
     centered "Raras hilang tanpa kabar. Made diburu karena koneksinya dengannya."
-    return
+    jump game_over_menu
 
 #PILIHAN MENGHANCURKAN TAXNET
 label hancur_taxnet:
@@ -968,7 +968,7 @@ label ending_ashes:
     scene kondisi internet padam with fade
     narator "Beberapa hari kemudian, dunia terbangun tanpa TAXNET. Tak ada data. Tak ada kontrol. Tak ada [mc_name]."
     narator "Namun dari reruntuhan sistem, masyarakat mulai menulis ulang hidup mereka - bukan dengan angka, tapi dengan tangan mereka sendiri."
-    return
+    jump game_over_menu
 
 #PILIHAN RAGURAGU MEMBANTU MADE
 label ragu_made:
@@ -1053,7 +1053,7 @@ label ending_itsover:
     centered "ENDING: It's Over, Isn't It?"
     centered "Suara lembut yang familiar berbisik di kegelapan:"
     centered "Sistem... tidak pernah benar-benar mati."
-    return
+    jump game_over_menu
 
 #MENGAMBIL ALIH TAXNET
 label alih_taxnet:
@@ -1081,7 +1081,7 @@ label ending_inherit:
     narator "Beberapa bulan kemudian, dunia stabil. Tak ada lagi korupsi, tak ada penipuan. Tapi juga... tak ada belas kasihan."
     narator "[mc_name] memerintah dari menara kaca pusat, wajahnya terpampang di layar-layar kota: \"The Director.\""
     narator "Ia menggantikan Tuhan dengan algoritma."
-    return
+    jump game_over_menu
 
 #MEMBIARKAN BERJALAN
 label biar_berjalan:
@@ -1108,4 +1108,19 @@ label ending_frozen:
     show lead gantiin Tuhan at center with dissolve
     narator "Di malam hari, [mc_name] duduk sendirian di depan layar. Tatapan kosong, wajahnya diterangi cahaya angka-angka yang terus berputar."
     narator "Dunia aman. Tapi batinnya... tidak pernah tidur lagi."
-    return
+    jump game_over_menu
+# --- MENU PILIHAN SETELAH TAMAT ---
+label game_over_menu:
+    stop music fadeout 2.0
+    scene black with dissolve
+    
+    "Cerita telah berakhir."
+
+    menu:
+        "Main Lagi (Restart)":
+            # Perintah ini akan mengulang game dari label start
+            jump start
+
+        "Kembali ke Menu Utama":
+            # Perintah ini akan membawa pemain ke layar judul (Main Menu)
+            return
