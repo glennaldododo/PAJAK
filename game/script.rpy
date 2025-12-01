@@ -103,12 +103,12 @@ image raras baca berita = "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Menyelamatk
 #scene 3 tidak nyelamatin
 #image raden bangga ada di sblmnya
 image lead senyum bahagia = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (m).png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/2. MC (f).png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (m).png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/2. MC (f).png",
 )
 image lead kantor baru = ConditionSwitch(
-    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
-    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 4 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
+    "gender == 'm'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (m) di kantor baru.png",
+    "gender == 'f'", "Dialog/Dialog 1 (tolak membantu)/Scene 3 (Tidak menyelamatkan Raras)/3. MC (f) di kantor baru.png",
 )
 
 
