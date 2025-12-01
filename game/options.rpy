@@ -29,9 +29,40 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-""")
+## Text that is placed on the game's about screen.
 
+define gui.about = _p("""
+{b}TAXNET: Bayang Tanah Sendiri{/b}
+Version 1.0
+
+{i}"Di dunia di mana nyawa dinilai dengan angka, seberapa mahal harga nuranimu?"{/i}
+
+Tahun 2045. Sistem perpajakan negara telah diambil alih oleh AI super canggih bernama {b}TAXNET{/b}. Tidak ada lagi kesalahan hitung, tidak ada lagi korupsi... atau begitulah yang terlihat.
+
+Di sini, warga dengan "Tax Counter" merah bukan hanya didenda, tapi dieksekusi.
+
+Kamu bermain sebagai {b}[mc_name]{/b}, seorang auditor muda dari keluarga terpandang yang baru saja memulai kariernya. Niat awal untuk mengabdi pada negara berubah menjadi mimpi buruk saat kamu menemukan anomali dalam sistem.
+
+Di antara ambisi teman lama yang licik, nyawa rekan kerja yang tak bersalah, dan atasan yang menyimpan rahasia gelap—setiap stempel yang kamu berikan bisa berarti kematian seseorang.
+
+Jaga integritas, atau jadilah bagian dari sistem?
+
+{size=24}------------------------------------------------{/size}
+
+{b}CREDITS{/b}
+
+{b}Director & Story:{/b}
+Nama Kamu
+
+{b}Character Design:{/b}
+Nama Artist / Aset
+
+{b}Music & SFX:{/b}
+Nama Komposer / Sumber Aset
+
+{b}Special Thanks:{/b}
+Komunitas Ren'Py Indonesia
+""")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
