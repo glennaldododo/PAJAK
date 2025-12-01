@@ -264,6 +264,29 @@ image laptop sunyi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIAR
 image suasana malam = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Suasan saat malam hari.png"
 image suasana pagi = "BG/Gambar Background/ADEGAN 0/PILIHAN DIALOG 3/C. (MEMBIARKAN BERJALAN)/Suasana saat pagi hari.png"
 
+#Audio
+define audio.sound_effect_dmv= "audio/5 Minute Sound Effects_ DMV.mp3"
+define audio.binary_code = "audio/Binary Code sound effects example.mp3"
+define audio.breathing_sound = "audio/Breathing Sound Effect.mp3"
+define audio.cellphone_ringing = "audio/Cell Phone Ringing - Sound Effect.mp3"
+define audio.clock_ticking = "audio/Clock Ticking Sound Effect.mp3"
+define audio.alarm_sound = "audio/Danger Alarm Sound Effect.mp3"
+define audio.fan_sound = "audio/Fan Sound Effect  Fan Sound EffectsFan Sound  Fan SoundsFan  The Fan  Free Sound Effect.mp3"
+define audio.iphone_notif = "audio/IPHONE NOTIFICATION SOUND EFFECT (PINGDING).mp3"
+define audio.mouse_click = "audio/Mouse Click Sound Effect.mp3"
+define audio.muncul3_pilihan = "audio/muncul 3 piliham, suara ticking sound.mp3"
+define audio.office = "audio/office.mp3"
+define audio.park_sound = "audio/park sound effects.mp3"
+define audio.pat_on_backshoulder = "audio/Pat On BackShoulder Sound Effect - MFSL (No Copyright).mp3"
+define audio.rain = "audio/Rain Sounds   15 seconds soundtrack.mp3"
+define audio.small_audience = "audio/Small Audience Chatter  Talking Sound Effect.mp3"
+define audio.footsteps = "audio/Sound Effects - Footsteps.mp3"
+define audio.surprise = "audio/Surprise (Dramatic Shock Moment) - Sound Effect for Editing.mp3"
+define audio.the_dark_night = "audio/The Dark Night (Suspense Background Music  Suspenseful background music).mp3"
+define audio.turns_off_TV = "audio/Turns off the television (Sound Effect).mp3"
+define audio.typing = "audio/TYPING ON KEYBOARD SOUND EFFECT.mp3"
+define audio.win11_notif = "audio/Windows 11 notification sound.mp3"
+
 
 #INISIALISASI
 # --- BAGIAN DEKLARASI IMAGE (TIDAK DIUBAH, SESUAI REQUEST) ---
